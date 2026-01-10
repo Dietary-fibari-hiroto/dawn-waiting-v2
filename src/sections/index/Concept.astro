@@ -1,0 +1,112 @@
+---
+import { ImagesIndex } from "../../assets/ImagesIndex";
+---
+
+<section class="concept">
+    <div class="concept-intro">
+        <p class="concept-intro__title text-4xl">夜が明けるたび、少し先へ。</p>
+        <figure class="img--big-horizontal concept-intro__figure">
+            <img class="concept-intro__figure-img" src={ImagesIndex.IMG_7407}/>
+        </figure>
+    </div>
+    <p class="concept-letter concept-text">
+完成を目指して、何かを作っているわけではない。<br/>
+ただ、昨日より少しだけ前に進めたらいいと思っています。<br/>
+<br/>
+うまくいかない日や、遠回りだと感じることも多くあります。<br/>
+それでも手を動かし続けていると、<br/>
+いつの間にか立っている場所が変わっていました。<br/>
+<br/>
+成長は、その瞬間よりも、あとから振り返ったときに気づくことが多い。<br/>
+夜が明けるたび、少しずつ前へ。<br/>
+ 気づけば、昨日を追い越している。<br/>
+    </p>
+    <div class="concept-image">
+        <figure class="concept-image__tl img--md-horizontal">
+            <img class="concept-image__img" src={ImagesIndex.IMG_7414}/>
+        </figure>
+        <figure class="concept-image__br img--md-horizontal">
+            <img class="concept-image__img" src={ImagesIndex.IMG_7391}/>
+        </figure>
+    </div>
+</section>
+
+<style lang="scss">
+    .concept{
+        position:relative;
+        overflow-x: hidden;
+    }
+     .concept-intro{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap:10rem;
+        margin:10rem 0;
+        &__title{
+            writing-mode:vertical-rl;
+            letter-spacing: 0.6rem;
+        }
+
+        &__figure{
+            overflow: hidden;
+            &-img{
+                width: 100%;
+                height:100%;
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    scale:1.1;
+                }
+            }
+        }
+     }
+     .concept-letter{
+        position:absolute;
+        top:50%;
+        right:10%;
+        transform: translate(-50%,-50%);
+        background:black;
+    }
+
+     .concept-image{
+        margin:10rem 0;
+        display:grid;
+        box-sizing:border-box;
+        padding:0 10rem;
+        gap: 5rem;
+        &__tl{justify-self: start;align-self:start;overflow: hidden;}
+        &__br{justify-self: end;align-self: end;overflow: hidden;}
+        &__img{
+            width: 100%;
+            height:100%;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                scale:1.1;
+            }
+        }
+     }
+
+
+
+
+     @media(max-width:1024px){
+
+
+
+        .concept-image{
+            padding:0;
+        }
+     }
+
+    @media(max-width:767px){
+        .concept-intro{
+            flex-direction: column;
+        }
+        .concept-letter{
+            position:inherit;
+            width: 100%;
+            top:0;
+            right:0;
+            transform: translate(0,0);
+        }
+    }
+</style>

@@ -1,0 +1,78 @@
+---
+import { ImagesIndex } from "../../assets/ImagesIndex";
+import { StickyNote } from "../../components";
+const bg = ImagesIndex.IMG_7408;
+---
+
+<section class="section-frame about-section" style={`background-image:
+ linear-gradient(#00000088,#00000088),url(${bg})
+`}>
+<div class="title-note">
+    <StickyNote title="私のこと" subTitle="AboutMe"/>
+</div>
+    <div class="about-section__inner">
+        <div class="about-section__inner-name">
+            <p class="text-5xl">おのでら ひろと</p>
+            <p class="text-xl">Onodera Hiroto</p>
+        </div>
+        <p class="about-section__letter concept-text">
+            IT系の専門学校で学びながら、興味の赴くままにIoTやWeb、アプリ開発に取り組んできました。
+何かを作るとき、最初に意識しているのは「誰のためか」や「新規か既存か」よりも、自分自身が「作りたいもの」か「欲しいもの」かどうかです。
+
+既存の仕組みであっても、それを自分仕様に設計し、動かし、壊しながら、手を動かすことで少しずつ構造を掴んできました。
+
+コードによってUIや挙動を自由に設計し、試行錯誤を重ねていく中で、まだ知らない仕組みや技術を知っていく過程に面白さを感じています。
+そうした制作の積み重ねが、技術だけでなく、今の私の設計や体験を捉える感覚を形づくっています。
+        </p>
+    </div>
+
+</section>
+
+
+<style lang="scss">
+    .title-note{
+        position:absolute;
+        top:-10%;
+        left:20%;
+
+    }
+    .about-section{
+        position:relative;
+        display:flex;
+        justify-content:end;
+        align-items: center;
+        background-position: center;
+        background-size: cover;
+
+        &__inner{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            padding: 10rem;
+            &-name{
+                > * + *{
+                    margin-top:-0.5rem;
+                }
+            }
+        }
+        &__letter{
+            padding-top: 1rem;
+            width:37.5rem;
+        }
+    }
+    @media(max-width:1024px){
+        .about-section{
+            justify-content:center;
+        }
+    }
+
+    @media(max-width:767px){
+        .about-section{
+            &__inner{
+                padding:0;
+            }
+        }
+    }
+</style>
+

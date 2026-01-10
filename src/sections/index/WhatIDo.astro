@@ -1,0 +1,70 @@
+---
+import { ImagesIndex } from "../../assets/ImagesIndex";
+import { StickyNote } from "../../components";
+const bg = ImagesIndex.IMG_1782;
+---
+
+<section class="section-frame about-section" style={`background-image:
+ linear-gradient(#00000088,#00000088),url(${bg})
+`}>
+<div class="title-note">
+    <StickyNote title="取り組んでいること" subTitle="What I Do"/>
+</div>
+    <div class="about-section__inner">
+        <div class="about-section__inner-name">
+            <p class="text-5xl">好きなものを好きなように</p>
+        </div>
+        <p class="about-section__letter concept-text">
+個人でポートレート撮影や画像編集を行っており、作品に合わせた写真を撮影・活用することで、魅力的なビジュアル表現を目指しています。 色彩や構図にもこだわり、制作物に最適な雰囲気を持たせるため、自ら撮影した写真を取り入れています。 個人制作で使用している写真はすべて自分で撮影したもので、「Product」ページで実際の作品をご覧いただけます。 </p>
+    </div>
+
+</section>
+
+
+<style lang="scss">
+    .title-note{
+        position:absolute;
+        top:-10%;
+        right:20%;
+
+    }
+    .about-section{
+        position:relative;
+        display:flex;
+        justify-content:start;
+        align-items: center;
+        background-position: center;
+        background-size: cover;
+
+        &__inner{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            padding: 10rem;
+            &-name{
+                > * + *{
+                    margin-top:-0.5rem;
+                }
+            }
+        }
+        &__letter{
+            padding-top: 1rem;
+            width:37.5rem;
+        }
+    }
+    @media(max-width:1024px){
+        .about-section{
+            justify-content:center;
+        }
+    }
+
+        @media(max-width:767px){
+        .about-section{
+            &__inner{
+                padding:0;
+            }
+        }
+    }
+</style>
+

@@ -1,0 +1,32 @@
+---
+import { ImagesIndex } from "../assets/ImagesIndex";
+---
+
+<header class="header">
+    <a href="/">
+        <img class="header-logo" src={ImagesIndex.dawn_logo}/>
+    </a>
+
+    <button>
+        <img src={ImagesIndex.compass}/>
+    </button>
+</header>
+
+<style lang="scss">
+    .header{
+        position:fixed;
+        top:0;
+        left:0;
+        z-index: 5;
+        width:100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+        margin:0.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-logo{
+            height:5rem;
+        }
+    }
+</style>

@@ -1,0 +1,62 @@
+---
+
+const {img,name,text,path} = Astro.props;
+---
+
+<a href={path} class="product-card">
+    <div class="product-card__inner">
+        <img class="product-card__inner-img" src={img}/>
+        <div class="product-card__inner-content">
+            <p class="text-2xl">{name}</p>
+            <p class="text-base">{text}</p>
+        </div>
+    </div>
+    <div class="product-card__panel"/>
+    <p class="product-card__enter text-base">ViewMore...</p>
+</a>
+
+<style lang="scss">
+    .product-card{
+        position: relative;
+        min-width:28em;
+        min-height:40rem;
+        &__inner{
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:3;
+            text-align: start;
+            &-img{
+                width:25rem;
+                height:18.75rem;
+                object-fit: contain;
+            }
+            &-content{
+                width: 100%;
+                box-sizing: border-box;
+                padding:0 1rem 0 5rem;
+                line-height: 2rem;
+                > * + *{
+                    margin-top: 1rem;
+                }
+            }
+        }
+        &__panel{
+            width:25rem;
+            height:31.25rem;
+            position:absolute;
+            bottom: 0;
+            right:0;
+            z-index:1;
+            background-color: #333333;
+        }
+        &__enter{
+            border-bottom: 1px solid white;
+            position:absolute;
+            bottom: 0;
+            right:0;
+            z-index:5;
+            margin:1rem;
+        }
+    }
+</style>

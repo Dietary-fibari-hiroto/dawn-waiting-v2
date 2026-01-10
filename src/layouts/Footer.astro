@@ -1,0 +1,29 @@
+---
+import { ImagesIndex } from "../assets/ImagesIndex";
+---
+
+<footer class="section-frame footer">
+    <img class="footer-img" src={ImagesIndex.dawn_logo}/>
+    <p class="footer-copyright">Copyright 2026/01/10 - Dawn. All Rights Reserved.</p>
+</footer>
+
+
+<style lang="scss">
+    .footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position:relative;
+        &-img{
+            width: 30rem;
+        }
+        &-copyright{
+            position:absolute;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            width:100%;
+            text-align:center;
+        }
+    }
+</style>

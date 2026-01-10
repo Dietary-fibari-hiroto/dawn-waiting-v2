@@ -1,0 +1,46 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "NotoSerifJP";
+  font-weight: normal;
+  background: black;
+  color: white;
+  scroll-behavior: smmoth;
+}
+
+html {
+  font-size: clamp(10px, 1vw, 16px);
+}
+body {
+  font-size: 1rem;
+}
+img {
+  object-fit: cover;
+}
+section {
+  transition: all 0.5s ease-in-out;
+}
+ul,
+li {
+  margin: 0; /* デフォルトの余白を削除 */
+  padding: 0; /* デフォルトのインデントを削除 */
+  list-style: none; /* デフォルトのマーカー（・や数字）を削除 */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+span {
+  padding: 0;
+  margin: 0;
+}
+button {
+  all: unset;
+  border: none;
+  background: transparent;
+  color: white;
+}

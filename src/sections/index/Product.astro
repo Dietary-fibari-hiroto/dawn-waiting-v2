@@ -1,0 +1,29 @@
+---
+import { SectionTitle,ProductCard } from "../../components";
+import { productList } from "../../constants/productList"
+---
+<section class="product-section">
+    <SectionTitle/>
+    <div class="product-list">
+        {
+        productList.map((product)=>(
+        <ProductCard name={product.name} path={product.path} text={product.text} img={product.img}/>
+    ))}
+    </div>
+</section>
+
+<style lang="scss">
+    .product-section{
+        padding:5rem 0;
+        
+    }
+    .product-list{
+        display: flex;
+        width:100%;
+        height:auto;
+        overflow-x: scroll;
+        padding-left: 5rem;
+        box-sizing: border-box;
+    }
+
+</style>

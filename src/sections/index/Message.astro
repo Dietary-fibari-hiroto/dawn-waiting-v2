@@ -1,0 +1,86 @@
+---
+import { ImagesIndex } from "../../assets/ImagesIndex";
+
+const stackList=[
+    ImagesIndex.astro_logo,
+    ImagesIndex.ts_logo,
+    ImagesIndex.scss_logo,
+    ImagesIndex.html_logo,
+    ImagesIndex.css_logo,
+    ImagesIndex.figma_logo,
+    ImagesIndex.azure
+]
+---
+
+<section class="message-section">
+    <div class="explain">
+        <img class="explain-logo" src={ImagesIndex.dawn_logo}/>
+        <p class="concept-text">
+            ここまでご覧いただき、ありがとうございます。<br/>
+
+このサイトは、私の二つ目の個人制作ポートフォリオサイトです。<br/> 名前の「DAWN」は、日本語で「夜明け」や「曙」を意味します。 <br/>涼しく静かな朝の空気には、昔から特別な心地よさを感じていました。<br/>
+<br/>
+このポートフォリオでは、「ただ好きなものを、好きなように作る」ことをテーマにしています。<br/> しょうもないものも含めて、自由に創作したものを置いていく場所です。<br/>
+<br/>
+一作目のポートフォリオ「DAWN」と比べると、できることも、考える視点も少しずつ増えました。<br/> このサイトは、学生としての制作の一区切りとして新たに作成しました。<br/>
+        </p>
+    </div>
+
+    <div class="stack">
+        <p class="text-3xl">このサイトの技術スタック</p>
+        <p class="concept-text">
+            フロントエンド: Astro,Typescript,HTML,SCSS/CSS<br/>
+            デザイン: Figuma<br/>
+            デプロイ環境:Microsoft Azure
+        </p>
+        <figure class="stack-list">
+            {stackList.map(stack=>(
+                <img src={stack}  />
+            ))}
+        </figure>
+    </div>
+</section>
+
+
+<style lang="scss">
+    .message-section{
+        margin:3rem 0;
+        > * + *{
+            margin-top:10rem;
+        }
+    }
+    .explain{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        text-align: center;
+        &-logo{
+            width:15rem;
+        }
+    }
+
+    .stack{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        &-list{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            > * + *{
+                margin-left:1rem;
+            }
+            > img{
+                width:6.25rem;
+                background: white;
+                border-radius: 100%;
+            }
+        }
+    }
+</style>

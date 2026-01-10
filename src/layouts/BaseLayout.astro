@@ -1,0 +1,35 @@
+---
+import "../assets/styles/index.scss";
+import Footer from "./Footer.astro";
+import Header from "./Header.astro";
+const {title = "dawn"} = Astro.props;
+---
+
+
+<html lang = "ja">
+    <head>
+        <meta charset = "utf-8"/>
+        <link rel="icon" type="image/svg+xml" href="https://dawn-waiting.com/static/media/dawn_cat_ani.863d6550f404cf074627.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="bg">
+        <Header/>
+        <main>
+            <slot/>
+        </main>
+        <Footer/>
+    </body>
+</html>
+
+<style lang="scss">
+    .bg{
+          background: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 70%,
+    #888 100%
+  );
+    }
+</style>

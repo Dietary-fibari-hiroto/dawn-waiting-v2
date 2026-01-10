@@ -1,0 +1,36 @@
+---
+const {title,subTitle} = Astro.props;
+---
+
+
+<div class="note">
+    <p class="note-title text-4xl">
+        {title}
+    </p>
+        <p class="note-subtitle text-xl">{subTitle}</p>
+</div>
+<style lang="scss">
+    .note{
+        background-color: white;
+        color:#333333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:1rem;
+        padding:1rem 0;
+        letter-spacing: 0.3rem;
+        
+        &-title{
+            writing-mode: vertical-lr;
+            
+        }
+        
+        &-subtitle {
+            writing-mode: vertical-lr;
+            transform: rotate(360deg);
+            border-left: black 1px solid;
+        }
+    }
+</style>
+</style>

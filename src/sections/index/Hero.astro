@@ -1,0 +1,30 @@
+---
+import { ImagesIndex } from "../../assets/ImagesIndex";
+
+---
+<section class="section-frame hero-section" style={`background-image:url(${ImagesIndex.IMG_7403})`}>
+    <p class="text-xl hero-section__concept">夜が明けるたび、少し先へ。</p>
+    <img src={ImagesIndex.dawn_logo} class="hero-section__logo" />
+</section>
+
+<style lang="scss">
+.hero-section{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-position: center;
+    background-size: cover;
+
+    &__concept{
+        letter-spacing: 0.5rem;
+    }
+    &__logo{
+        position:absolute;
+        bottom:0;
+        right:0;
+        width:30rem;
+    }
+
+}
+</style>
