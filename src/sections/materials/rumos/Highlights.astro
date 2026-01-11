@@ -27,7 +27,7 @@ import { SectionTitle } from "../../../components";
         <img class="img--lg-vertical" src={ImagesIndex.IMG_7185}/>
     </div>
 
-    <div class="section-inner">
+    <div class="section-inner rv">
         <img class="img--lg-vertical" src={ImagesIndex.IMG_7383}/>
         <div class="section-inner__content">
             <p class="text-3xl">
@@ -60,6 +60,16 @@ UI/UXの設計 ー "待たせない"体験
             }
             &-text{
                 width:37.5rem;
+            }
+        }
+    }
+
+    @media (max-width:767px) {
+        .section-inner{
+            flex-direction: column;
+            gap: 10rem;
+            &.rv{
+                flex-direction: column-reverse;
             }
         }
     }

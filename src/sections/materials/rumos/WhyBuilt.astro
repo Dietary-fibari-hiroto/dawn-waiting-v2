@@ -5,6 +5,8 @@ import { ImagesIndex } from "../../../assets/ImagesIndex";
 
 <section id="content-1" class="explain-section">
     <SectionTitle title="1.なぜ作ったのか" subTitle="Whiy I Built This"/>
+    
+    <img src={ImagesIndex.IMG_7122} class="decoration-img lt img--sm-vertical"/>
     <div class="explain-section__content">
         <p class="text-5xl">Why I Built This</p>
         <p class="concept-text">
@@ -31,7 +33,6 @@ import { ImagesIndex } from "../../../assets/ImagesIndex";
         </p>
     </div>
 
-    <img src={ImagesIndex.IMG_7122} class="decoration-img lt img--sm-vertical"/>
     <img src={ImagesIndex.IMG_7386} class="decoration-img rc img--md-vertical"/>
     <img src={ImagesIndex.IMG_7159} class="decoration-img lb img--lg-vertical"/>
 </section>
@@ -70,5 +71,15 @@ import { ImagesIndex } from "../../../assets/ImagesIndex";
             bottom:0;
             left:0;
         }
+    }
+    @media(max-width:767px){
+            .decoration-img{
+        position:relative;
+                &.rc{
+            top:50%;
+            right:0;
+            transform: translateX(100%);
+        }
+            }
     }
 </style>

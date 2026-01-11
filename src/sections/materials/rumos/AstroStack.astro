@@ -68,4 +68,18 @@ Markdown や MDX との相性も良く、ブログやドキュメント、メデ
             background-color: white;
         }
     }
+
+        @media(max-width:767px) {
+        .stack-section{
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 3rem;
+
+            &__content{
+                &-text{
+                    width: 100%;
+                }
+            }
+        }
+    }
 </style>

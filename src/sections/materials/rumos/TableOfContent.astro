@@ -38,6 +38,7 @@ const snapList = [
 <style lang="scss">
     .t-section{
         width:100%;
+        overflow-x: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -83,6 +84,16 @@ const snapList = [
             gap: 3rem;
             box-sizing: border-box;
             padding:0 0.5rem;
+        }
+    }
+
+
+    @media(max-width:767px) {
+        .table-list{
+                    &__inner{
+                        flex-direction: column;
+            flex-wrap: nowrap;
+                    }
         }
     }
 </style>
