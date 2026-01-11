@@ -1,7 +1,27 @@
 ---
 import { SectionTitle } from "../../../components";
+import video from "../../../assets/videos/rumos.mp4"
 ---
 
-<section class="section-frame" id="content-4">
-    <SectionTitle title="4.デモ" subTitle="Demo"
+<section class="section-frame demo-section " id="content-4">
+    <div class="demo-section__title"><SectionTitle title="4.デモ" subTitle="Demo"/></div>
+    <video class="section-frame" id="background-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto">
+<source src = {video} type = "video/mp4"/></video>
 </section>
+
+<style lang="scss">
+    .demo-section{
+        position:relative;
+        &__title{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+        }
+    }
+</style>
