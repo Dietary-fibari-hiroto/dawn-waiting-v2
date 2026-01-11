@@ -1,0 +1,80 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+import { SectionTitle } from "../../../components";
+import {ProductCard} from "../../../components";
+
+const products=[
+  {
+    name: "Sangria",
+    path: "https://rumos.dawn-waiting.com/product/sangria",
+    catchcopy: "",
+    text: "Dawn-Sangriaは、飲み終えたワインボトルを “灯り”へと生まれ変わらせる ライトインテリアです。 ボトルに差し込むだけで、柔らかな光が広がり 空間を上品に演出します。",
+    img: "https://rumos.dawn-waiting.com/_astro/IMG_7112.B_1IMeEY.jpg",
+  },
+  {
+    name: "StarTrail",
+    path: "https://rumos.dawn-waiting.com/product/startrail",
+    catchcopy: "",
+    text: "この間接照明は、TGBLEDカラーグレーディングによる繊細な色表現で、部屋の雰囲気を思い通りに演出できるライトです。柔らかい光が壁をなでるように広がり、空間そのものに奥行きを与えるデザインが特徴。",
+    img: "https://rumos.dawn-waiting.com/_astro/startrail_hero.jif3RkZq.png",
+  },
+  {
+    name: "Re:Flame Jar",
+    path: "https://rumos.dawn-waiting.com/",
+    catchcopy: "",
+    text: "キャンドルの空き瓶をそのまま生かし、新しい灯りとして再生させたアップサイクルライト。 ランダムに光が揺れる“炎モード”が、まるで本物の火のような温度感のある雰囲気を作り出し、部屋にそっと寄り添うような柔らかな光を放ちます。",
+    img: "https://rumos.dawn-waiting.com/_astro/IMG_7358.BY7butZx.jpg",
+  },
+  {
+    name: "Rumos:Desktop",
+    path: "",
+    catchcopy: "",
+    text: "デバイスを操るコントロールソフト",
+    img: "https://rumos.dawn-waiting.com/_astro/IMG_7381.DWf7icDj.jpg",
+  },
+  {
+    name: "Rumos:Controller",
+    path: "",
+    catchcopy: "",
+    text: "デバイスを杖で操るコントロールデバイス",
+    img: ImagesIndex.IMG_7391,
+  },
+    {
+    name: "OfficailWebSite",
+    path: "https://rumos.dawn-waiting.com/",
+    catchcopy: "",
+    text: "OfficialWebサイト",
+    img: "https://rumos.dawn-waiting.com/_astro/IMG_7398.BYiirGM4.png",
+  },
+];
+---
+
+<section class="product-section" id="content-3">
+    <SectionTitle title="3.作成したモノ" subTitle="What I Created"/>
+    <div>
+            <div class="product-list">
+        {
+        products.map((product)=>(
+        <ProductCard name={product.name} path={product.path} text={product.text} img={product.img}/>
+    ))}
+    </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .product-section{
+        padding:5rem 0;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: black;
+    }
+    .product-list{
+        display: flex;
+        width:100%;
+        height:auto;
+        overflow-x: scroll;
+        padding-left: 5rem;
+        box-sizing: border-box;
+    }
+
+</style>

@@ -20,6 +20,7 @@ img {
 }
 section {
   transition: all 0.5s ease-in-out;
+  position: relative;
 }
 ul,
 li {
@@ -34,7 +35,8 @@ a {
 }
 
 p,
-span {
+span,
+figure {
   padding: 0;
   margin: 0;
 }

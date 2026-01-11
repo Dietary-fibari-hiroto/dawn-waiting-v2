@@ -1,0 +1,66 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+import { SectionTitle } from "../../../components";
+---
+
+
+<section class="highlight"  id="content-8">
+    <SectionTitle title="8.開発で工夫したこと" subTitle="Development Highlights"/>
+    <div class="section-inner">
+        <div class="section-inner__content">
+            <p class="text-3xl">
+                デバイスの小型化 ー<br/>
+                スタイリッシュにするために。
+            </p>
+            <p class="concept-text section-inner__content-text">
+    見た目重視のプロダクトである以上、どれだけ小さく、スタイリッシュに作れるかが最大の課題でした。
+最初の「Sangria」は、ヘッド部分が大きすぎて正直ダサかった。
+試行錯誤の末、以下の改良を重ねました：
+・ESP32の小型モデルへの変更（Seeeduino XIAO ESP32C3を採用）
+・基板設計の見直し（配線レイアウトの最適化）
+・3Dプリント部品の薄肉化（強度を保ちながら軽量化）
+
+結果、ヘッドサイズを約60%削減し、
+インテリアに自然に溶け込むフォルムを実現できました。
+            </p>
+        </div>
+        <img class="img--lg-vertical" src={ImagesIndex.IMG_7185}/>
+    </div>
+
+    <div class="section-inner">
+        <img class="img--lg-vertical" src={ImagesIndex.IMG_7383}/>
+        <div class="section-inner__content">
+            <p class="text-3xl">
+UI/UXの設計 ー "待たせない"体験
+            </p>
+            <p class="concept-text section-inner__content-text">
+タッチパネルUIでは、くら寿司のチェックインシステムにインスパイアされ、 スリープ→起動の高速レスポンスを重視。 人が近づいた瞬間にスムーズに立ち上がる体験を目指しました。
+            </p>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .highlight{
+        padding:5rem 0;
+        background-color: black;
+        > * + *{
+            margin-top: 10rem;
+        }
+    }
+    .section-inner{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20rem;
+
+        &__content{
+            > * + *{
+                margin-top: 2rem;
+            }
+            &-text{
+                width:37.5rem;
+            }
+        }
+    }
+</style>

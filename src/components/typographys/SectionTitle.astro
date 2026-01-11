@@ -1,18 +1,25 @@
+---
+const {title,subTitle} = Astro.props;
+---
+
 <div class="section-title">
     <span class="text-4xl">
-開発した作品
+{title}
     </span>
     <span class="text-base section-title__subtitle">
-        Product
+        {subTitle}
     </span>
 </div>
 
 <style lang="scss">
     .section-title{
         display: flex;
+        width:100%;
+        box-sizing: border-box;
         justify-content: start;
         align-items: end;
         padding: 3rem;
+        
         &__subtitle{
             border-bottom: solid white 1px;
         }

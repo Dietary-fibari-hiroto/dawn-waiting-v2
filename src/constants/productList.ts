@@ -2,9 +2,18 @@ const productGenre = {
   webSite: "webサイト",
   webApp: "Webアプリ",
   all: "総合",
+  material: "資料",
 };
 
 export const productList = [
+  {
+    name: "Rumos発表資料",
+    path: "/materials/Rumos",
+    genre: productGenre.material,
+    catchcopy: "変わらぬ日々に魔法をかけて。",
+    text: "ゼミの発表資料です。",
+    img: "https://rumos.dawn-waiting.com/_astro/IMG_7398.BYiirGM4.png",
+  },
   {
     name: "DuckShift",
     path: "https://www.duskshift.dawn-waiting.com/",

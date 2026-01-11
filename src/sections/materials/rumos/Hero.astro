@@ -1,0 +1,30 @@
+<section class="section-frame hero-section">
+    <p class="text-lg hero-section__concept">変わらぬ日々に、魔法をかけて。</p>
+    <p class="text-7xl hero-section__title">Rumos</p>
+    <p class="hero-section__meta">SK3A IoTゼミ所属 小野寺広登 - 研究発表資料</p>
+</section>
+
+<style lang="scss">
+.hero-section{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__concept{
+        letter-spacing: 0.2rem;
+    }
+    &__title{
+        letter-spacing: 1rem;
+    }
+    &__meta{
+        position:absolute;
+        padding:0.5rem 0 ;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+        letter-spacing: 0.1rem;
+    }
+}
+</style>

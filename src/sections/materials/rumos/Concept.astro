@@ -1,0 +1,49 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+import { SectionTitle } from "../../../components";
+const bg = ImagesIndex.IMG_7356
+---
+
+<section class="section-frame concept-section" id="content-2" style={`background-image:linear-gradient(#00000044,#00000044),url(${bg})`}>
+    <SectionTitle title="2.コンセプト" subTitle="Concept"/>
+    <div class="concept-section__inner">
+        <p class="concept-section__inner-concept text-3xl">変わらぬ日々に、<br/>魔法をかけて。</p>
+        <p class="concept-text concept-section__inner-content">
+            光は、空間だけでなく気分まで整えてくれる存在です。
+色や明るさが変わるだけで、同じ部屋がくつろぎの場所にも、作業に集中できる場所にも姿を変える。
+そんな魔法のように空間を自在に操るプロダクトを作りたいと考えました。
+<br/><br/>
+そこで私たちは、暮らしの中で眠っていたモノに新しい役割を与えることで、<br/>
+環境にも、心にも優しい照明体験を目指しています。<br/>
+日常に溶け込みながら、必要な時だけ空間の表情を変えてくれる——<br/>
+そんな生活に静かに寄り添うシステムです。<br/>
+<br/>
+そして、その空間を操る“鍵”となるのが、ひと振りの杖。<br/>
+何気ない所作から、部屋全体がそっと表情を変える。<br/>
+まるで現実なのに、少しだけ魔法がつけえるかのように。<br/>
+        </p>
+    </div>
+</section>
+
+
+<style lang="scss">
+    .concept-section{
+        background-position: center;
+        background-size: cover;
+
+        &__inner{
+            display: flex;
+            justify-content: center;
+            gap:10rem;
+            align-items: center;
+            &-concept{
+                writing-mode: vertical-lr;
+                letter-spacing: 1rem;
+                line-height: 3rem;
+            }
+            &-content{
+                max-width: 45rem;
+            }
+        }
+    }
+</style>

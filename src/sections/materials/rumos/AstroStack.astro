@@ -1,0 +1,71 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+---
+
+
+<section class="stack-section" id="content-7">
+    <div class="stack-section__content">
+        <div class="stack-section__content-label">
+            <img class="label-icon" src={ImagesIndex.astro_logo}/>
+            <div class="label-content">
+                <p><span class="text-5xl">7.</span><span class="text-base">Astro</span></p>
+                <p class="text-3xl">超高速なWebサイトを作るための<br/>
+コンテンツ駆動型フレームワーク</p>
+            </div>
+        </div>
+        <p class="stack-section__content-text concept-text">
+Astro は、超高速で表示されるコンテンツサイトを簡単に作れるフレームワークです。
+基本はサーバー側で完成した HTML を生成し、クライアントにはほとんど JavaScript を送らないため、初期表示が驚くほど速く、SEO にも強いのが特徴です。
+さらに、必要になった箇所だけを React / Vue / Svelte などのコンポーネントで“部分的に動的化（Island Architecture）” できるため、
+「表示は速いのに、体験はリッチ」という理想的なサイトを実現できます。
+Markdown や MDX との相性も良く、ブログやドキュメント、メディアサイトなどのコンテンツ中心のサイトに最適。
+速さ・シンプルさ・拡張性を兼ね備えた Astro は、
+「軽くて気持ちいい Webサイト」を作りたい人にぴったりの選択肢です。
+</p>
+    </div>
+    <figure class="stack-section__figure" style={`background-image:url(${ImagesIndex.weblatest})`}>
+    </figure>
+</section>
+
+<style lang="scss">
+    .stack-section{
+        width:100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        gap:10rem;
+        background-color: black;
+        padding: 3rem 0;
+
+        &__content{
+            display: flex;
+            flex-direction: column;
+            gap:3rem;
+            &-label{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap:1rem;
+            }
+            &-text{
+                width:28rem;
+            }
+        }
+        &__figure{
+            position:relative;
+            width:40rem;
+            height: 25rem;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    .label{
+        &-icon{
+            width:9rem;
+            height: 9rem;
+            border-radius: 100%;
+            border: solid 10px #333;
+            background-color: white;
+        }
+    }
+</style>

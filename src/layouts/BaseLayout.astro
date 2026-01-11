@@ -2,6 +2,7 @@
 import "../assets/styles/index.scss";
 import Footer from "./Footer.astro";
 import Header from "./Header.astro";
+import LoadingScreen from "../sections/LoadingScreen.astro";
 const {title = "dawn"} = Astro.props;
 ---
 
@@ -15,21 +16,33 @@ const {title = "dawn"} = Astro.props;
         <title>{title}</title>
     </head>
     <body class="bg">
+        <LoadingScreen/>
         <Header/>
         <main>
             <slot/>
         </main>
         <Footer/>
+
+        <script>
+            import { initLoadingScreenWithStages } from "../hooks/loadingScreen";
+            initLoadingScreenWithStages({
+                    trackImages: true,
+    minDisplayTime: 2000,// プログレスバー最低表示時間
+    loaderFadeDuration: 500,//ローダーフェードアウト時間
+    secondProcessFadeDuration: 800,//2段階目フェードイン/アウト時間
+    secondProcessDisplayTime: 2000,//2段階目の表示時間
+    finalFadeDuration: 1000,//全体のフェードアウト時間(これさわってりゃなんとかなる)
+        onComplete: () => {
+      console.log('Loaded');
+    }
+            })
+        </script>
     </body>
 </html>
 
 <style lang="scss">
     .bg{
-          background: linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 70%,
-    #888 100%
-  );
+    background: linear-gradient(to bottom, #0a0e27 0%, #1a1e3e 100%);
+
     }
 </style>

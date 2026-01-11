@@ -1,0 +1,88 @@
+---
+import { SnapButton,SectionTitle } from "../../../components";
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+
+
+const snapList = [
+    {id:"content-1",title:"Why I made it",subTitle:"なぜ作ったのか"},
+    {id:"content-2",title:"Concept",subTitle:"コンセプト"},
+    {id:"content-3",title:"What I Created",subTitle:"作成したモノ"},
+    {id:"content-4",title:"Demo",subTitle:"デモ"},
+    {id:"content-5",title:"Technology",subTitle:"技術選定"},
+    {id:"content-6",title:".NET MAUI Blazor Hybrid",subTitle:"既存のWeb技術でクロスプラットフォームUI構築"},
+    {id:"content-7",title:"Astro",subTitle:"素敵なコンテンツ駆動Webフレームワーク"},
+    {id:"content-8",title:"Development Highlights",subTitle:"開発で工夫したこと"},
+    {id:"content-",title:"Outcomes & Next Steps",subTitle:"成果と学び・今後"},
+    {id:"content-",title:"SpecialThanks",subTitle:""},
+]
+---
+
+<section class="t-section">
+    <div class="ad-content" style={`background-image:linear-gradient(#00000066,#00000066),url(${ImagesIndex.IMG_7398})`}>
+        <p class="text-xl">Rumos</p>
+        <p class="text-5xl ad-content__underline">OfficialSite</p>
+        <p>このプロジェクトのオフィシャルサイトを作ってみました。<br/>よければご覧ください。</p>
+        <p class="ad-content__enter">Enter</p>
+    </div>
+    <div class="table-list">
+        <SectionTitle title="0.目次" subTitle="Table of contents"/>
+        <div class="table-list__inner">
+            {snapList.map((snap,index)=>(
+                <SnapButton {...snap} title={`${index+1}.${snap.title}`} />
+            ))}
+        </div>
+    </div>
+
+</section>
+
+<style lang="scss">
+    .t-section{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20rem;
+        > *{
+            margin:10rem 0;
+        }
+        
+    }
+    .ad-content{
+        width:62.5rem;
+        height: 32.25rem;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        > * + *{
+            margin-top:1rem;
+        }
+
+        &__underline{
+            border-bottom: 2px solid white;
+        }
+        &__enter{
+            border-bottom: 1px solid white;
+        }
+    }
+
+    .table-list{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &__inner{
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            max-width: 90rem;
+            gap: 3rem;
+            box-sizing: border-box;
+            padding:0 0.5rem;
+        }
+    }
+</style>
