@@ -1,0 +1,29 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+const bg = ImagesIndex.IMG_7174;
+---
+
+<section class="section-frame container" style={`background-image:linear-gradient(#00000044,#00000044),url(${bg})`}>
+    <p class="text-3xl">
+        Special Thanks
+    </p>
+    <p class="container-text">
+        今回このプロジェクトを実施するにあたって基板設計やはんだ,3Dプリンタの使い方を親切に教えてくれた〇〇,〇〇。 そして3Dプリンタ、ラズパイ、IoT環境を貸してくださった〇〇先生、 おかげさまで楽しかったです。ありがとうございました。</p>
+</section>
+
+<style lang="scss">
+    .container{
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:5rem;
+        &-text{
+            width:40rem;
+            text-align: center;
+            display:none;
+        }
+    }
+</style>

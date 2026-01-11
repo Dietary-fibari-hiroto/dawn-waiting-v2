@@ -1,0 +1,21 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+import { SectionTitle } from "../../../components";
+---
+<section id="content-5" class="technology-section">
+    <SectionTitle title="5.技術選定" subTitle="Technology" />
+    <figure style={`background-image:url(${ImagesIndex.stacklist})`} class="section-frame technology-section__content"/>
+    <figure style={`background-image:url(${ImagesIndex.stackcomposition})`} class="section-frame technology-section__content"/>
+</section>
+
+<style lang="scss">
+    .technology-section{
+        background-color: black;
+        &__content{
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    
+</style>

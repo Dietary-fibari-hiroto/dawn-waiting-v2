@@ -1,0 +1,74 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex"
+import { SectionTitle } from "../../../components"
+---
+
+<section class="outcomes-section"  id="content-9">
+    <SectionTitle title="9.成果と学び・今後"/>
+    <div class="outcomes">
+        <img class="img--big-vertical" src={ImagesIndex.IMG_7385}/>
+        <div>
+            <p class="text-3xl">得られたもの</p>
+            <p class="concept-text-width">
+                今回のプロジェクトを通じて、幅広い領域に挑戦し、多くの学びを得ました：
+                ・ハードウェア設計：3Dプリンタ、基板設計、はんだ付けの基礎
+                ・UI/UX設計：タッチパネルアプリの操作体験設計
+                ・クラウド技術：Azure を活用したIoTデバイスの制御基盤構築
+                ・創造性の実践：授業で学んだ「テープライトとESP32」という平凡な組み合わせが、
+                アイデア次第で個性的なプロダクトに生まれ変わることを体感
+            </p>
+        </div>
+        <div class="outcomes-end">
+            <img src={ImagesIndex.IMG_7357} class="img--md-horizontal"/>
+            <div>
+                <p class="text-3xl">実装できたこと</p>
+                <p class="concept-text-width">
+                    ・ライトデバイス 3種類の自作（Sangria, Lamina, Lucius）
+                    ・マルチプラットフォームアプリ
+                    ・電源制御システム（TP-Link統合）
+                    ・杖デバイスのプロトタイプ（M5Stick + ジャイロセンサー）
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="nextstep">
+        <img class="img--lg-horizontal" src={ImagesIndex.IMG_7375}/>
+        <div>
+            <p class="text-3xl">今後の展望</p>
+            <p class="concept-text-width">
+                実力不足で実装できなかった機能もあります。 特に、Raspberry Pi5 とカメラを使った「 杖による個別デバイス制御」は、 モーション認識の精度向上が課題として残りました。 これからも技術を磨きながら、 もっと多くの日用品に魔法をかけられるシステムへと発展させていきたいです。
+            </p>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .outcomes{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-section{
+            > * + *{
+                margin-top:10rem;
+            }
+        }
+
+        &-end{
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+            align-items: start;
+            padding-right: 1rem;
+            gap:10rem;
+        }
+    }
+
+    .nextstep{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:10rem;
+
+    }
+</style>

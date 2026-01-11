@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import { Hero,TableOfContent,WhyBuilt,Concept,Created,Demo,Technology,Maui,AstroStack,Highlights,Outcomes,SpecialThanks } from "../../sections/materials/rumos"
+import { ImagesIndex } from "../../assets/ImagesIndex"
+const bg = ImagesIndex.IMG_7391;
+---
+<BaseLayout>
+    <figure class="fixed-bg section-frame"   style={`background-image:
+    linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+    url(${bg})`}>
+        <div window-scroll-fade class="fixed-bg__panel section-frame"/>
+    </figure>
+    
+    <div hero-fadeout>
+        <Hero />
+    </div>
+    <TableOfContent/>
+    <WhyBuilt/>
+    <Concept/>
+    <Created/>
+    <Demo/>
+    <Technology/>
+    <Maui/>
+    <AstroStack/>
+    <Highlights/>
+    <Outcomes/>
+    <SpecialThanks/>
+</BaseLayout>
+
+<script>
+    import { setUpFadeInWindowOnScroll } from "../../hooks/fadeOnScroll";
+    import { initScrollCards } from "../../hooks/snapHooks";
+
+  initScrollCards();
+
+    setUpFadeInWindowOnScroll({
+        scrollThreshold:100,
+        attribute:"[window-scroll-fade]",
+    })
+
+    setUpFadeInWindowOnScroll({
+        scrollThreshold:100,
+        addClass:"is-invisible",
+        attribute:"[hero-fadeout]"
+    })
+</script>
+
+<style lang="scss">
+    .fixed-bg{
+        position:fixed;
+        top:0;
+        left:0;
+        z-index: 0;
+        background-position: center;
+        background-size: cover;
+        &__panel{
+            background-color: #00000066;
+            backdrop-filter: blur(0.5rem);
+        }
+    }
+
+
+    [window-scroll-fade] {
+        opacity: 0;
+        transition: opacity 0.7s ease-out;
+      }
+
+      [window-scroll-fade].is-visible {
+        opacity: 1;
+      }
+      [hero-fadeout]{
+        transition: opacity 0.7s ease-out;
+        &.is-invisible{
+            opacity: 0;
+        }
+      }
+      
+</style>

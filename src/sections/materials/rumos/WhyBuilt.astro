@@ -1,0 +1,74 @@
+---
+import { SectionTitle } from "../../../components";
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+---
+
+<section id="content-1" class="explain-section">
+    <SectionTitle title="1.なぜ作ったのか" subTitle="Whiy I Built This"/>
+    <div class="explain-section__content">
+        <p class="text-5xl">Why I Built This</p>
+        <p class="concept-text">
+            部屋の雰囲気を、シーンに合わせて自在に変えられたらいい——<br/>
+映画を観るとき、友人と過ごすとき、一人で集中したいとき。<br/>
+そんな考えが、このプロジェクトの出発点でした。<br/>
+<br/>
+きっかけは、バイト先で見かけた「飾られたワインボトル」。<br/>
+空き瓶をインテリアとして飾る人は多いけれど、<br/>
+「飾るだけじゃもったいない。物足りない」と感じたんです。<br/>
+<br/>
+そこで思いついたのが、<br/>
+ワインボトルの内側から光らせて、ライトインテリアとして生まれ変わらせる<br/>
+というアイデア。<br/>
+<br/>
+夏休みに友人に3Dプリンタや基板について教わりながら、<br/>
+最初の一台——ワインボトルを使ったライトデバイスを作りました。<br/>
+<br/>
+すると欲が出てきて。<br/>
+もっとバリエーションが欲しい。自由にコントロールしたい。そして、エンタメ要素も。<br/>
+<br/>
+こうして、複数のライトデバイス、専用の制御アプリ、<br/>
+そして杖で操作する機能へと、プロジェクトは発展していきました。<br/>
+        </p>
+    </div>
+
+    <img src={ImagesIndex.IMG_7122} class="decoration-img lt img--sm-vertical"/>
+    <img src={ImagesIndex.IMG_7386} class="decoration-img rc img--md-vertical"/>
+    <img src={ImagesIndex.IMG_7159} class="decoration-img lb img--lg-vertical"/>
+</section>
+
+<style lang="scss">
+    .explain-section{
+        width: 100%;
+        position:relative;
+        padding:5rem 0;
+        margin:5rem 0;
+        &__content{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap:5rem;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            padding:0 1rem;
+            margin: 5rem 0;
+        }
+    }
+    .decoration-img{
+        position:absolute;
+        &.lt{
+            top:15%;
+            left:10%;
+        }
+        &.rc{
+            top:50%;
+            right:0;
+            transform: translateY(-50%);
+        }
+        &.lb{
+            bottom:0;
+            left:0;
+        }
+    }
+</style>

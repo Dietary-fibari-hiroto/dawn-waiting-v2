@@ -1,0 +1,88 @@
+---
+import { StreetLight } from "../components";
+---
+
+
+<div id="loading-screen" class="loading-screen flex-all-center">
+  <div class="loader">
+    <StreetLight/>
+    <p class="text-base">waiting for the first light…</p>
+    <div class="progress-container">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    <p id="progress-text text-xl">0%</p>
+  </div>
+  <figure class="second-proccess">
+    <div class="second-proccess__concept">
+        <p class="text-xl">夜が明けるたび、少し先へ。</p>
+    </div>
+  </figure>
+</div>
+
+
+<style lang="scss">
+
+  .loading-screen {
+    background: linear-gradient(to bottom, #0a0e27 0%, #1a1e3e 100%);
+    position: fixed;
+    z-index: 99;
+    width: 100vw;
+    height: 100dvh;
+    text-align: center;
+  }
+
+  .loader {
+    /* 最初は表示 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .second-proccess {
+    /* 最初は非表示（JSで制御） */
+    width:100%;
+    height: 100%;
+    position:relative;
+    &__concept{
+        position: absolute;
+        width:100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color:white;
+        letter-spacing: 0.5rem;
+    }
+
+  }
+.progress-container {
+  width: 250px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 1rem auto;
+  box-shadow: 0 0 10px rgba(138, 180, 248, 0.1);
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4a5f8f 0%, #7a9cc6 50%, #f4a460 100%);
+  transition: width 0.3s ease;
+  width: 0%;
+  box-shadow: 0 0 8px rgba(122, 156, 198, 0.5);
+}
+
+#progress-text {
+  color: #b8c5d9;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.1rem;
+  opacity: 0.9;
+}
+
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>

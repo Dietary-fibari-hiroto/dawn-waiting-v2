@@ -1,0 +1,82 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+---
+
+
+<section class="stack-section" id="content-6">
+    <div class="stack-section__content">
+        <div class="stack-section__content-label">
+            <img class="label-icon" src={ImagesIndex.MAUI}/>
+            <div class="label-content">
+                <p><span class="text-5xl">6.</span><span class="text-base">.NET MAUI Blazor Hybrid</span></p>
+                <p class="text-3xl">既存のWeb技術で、<br/>
+クロスプラットフォームのUI構築</p>
+            </div>
+        </div>
+        <p class="stack-section__content-text concept-text">
+.NET MAUI Blazor Hybrid の最大の魅力は、
+これまで Web で積み上げてきた HTML / CSS / JavaScript といった資産を、そのまま活かしてマルチプラットフォームの UI を構築できること です。
+画面の描画は Web 技術で行いながら、アプリのロジックは C# で動作し、カメラやGPSなどのネイティブ機能にも直接アクセスできます。
+そのため、Web エンジニアでも学習コストを抑えつつ、iOS・Android・Windows・Mac 向けのアプリを一つのコードベースで開発できます。
+        </p>
+    </div>
+    <figure class="stack-section__figure">
+        <img class="img--sm-horizontal rt" src={ImagesIndex.code}/>
+        <img class="img--sm-horizontal lb" src={ImagesIndex.IMG_7383}/>
+    </figure>
+</section>
+
+<style lang="scss">
+    .stack-section{
+        width:100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        gap:10rem;
+        background-color: black;
+        padding: 3rem 0;
+
+        &__content{
+            display: flex;
+            flex-direction: column;
+            gap:3rem;
+            &-label{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap:1rem;
+            }
+            &-text{
+                width:28rem;
+            }
+        }
+        &__figure{
+            position:relative;
+            width:32rem;
+            height:25rem;
+            > .rt{
+                position:absolute;
+                top:0;
+                right: 0;
+                z-index:1;
+            }
+            > .lb{
+                position:absolute;
+                bottom:0;
+                left: 0;
+                z-index:3;
+            }
+        }
+    }
+    .label{
+        &-icon{
+            width:9rem;
+            height: 9rem;
+            border-radius: 100%;
+            border: solid 10px #333;
+        }
+        &-content{
+            
+        }
+    }
+</style>
