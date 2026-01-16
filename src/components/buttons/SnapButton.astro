@@ -1,5 +1,5 @@
 ---
-const {title,subTitle,id} = Astro.props;
+const {title,subTitle,id,color = "white"} = Astro.props;
 ---
 <button class="button-container" data-tech-id={id}>
     <div class="button-container__inner">
@@ -9,13 +9,14 @@ const {title,subTitle,id} = Astro.props;
     <p class="text-md">↓</p>
 </button>
 
-<style lang = "scss">
+<style define:vars={{color}} lang = "scss">
     .button-container{
+      color:var(--color);
         display: flex;
         align-items: center;
         gap:3rem;
         padding-right:2rem;
-        border-bottom:solid 1px white;
+        border-bottom:solid 1px var(--color);
         text-align:start;
         cursor: pointer;
         font-family: "NotoSerifJP";

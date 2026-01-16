@@ -1,0 +1,100 @@
+---
+import { SnapButton,SectionTitle } from "../../../components";
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+
+
+const snapList = [
+    {id:"content-1",title:"Introduction",subTitle:"導入"},
+    {id:"content-2",title:"Problem definition",subTitle:"問題定義"},
+    {id:"content-3",title:"Concept&Approach",subTitle:"コンセプトとアプローチ"},
+    {id:"content-4",title:"Function",subTitle:"主な機能とできること"},
+    {id:"content-5",title:"Demo",subTitle:"デモ"},
+    {id:"content-6",title:"Technology",subTitle:"技術スタック"},
+    {id:"content-7",title:"BlazorServer",subTitle:"SSRのSPA"},
+    {id:"content-8",title:"Development Challenges",subTitle:"開発で苦労したこと"},
+    {id:"content-9",title:"Outcomes & Next Steps",subTitle:"成果と学び・今後"},
+]
+---
+
+<section class="t-section">
+    <a href="https://jambubble.dawn-waiting.com" class="ad-content" style={`background-image:linear-gradient(#00000066,#00000066),url(${ImagesIndex.hero})`}>
+        <p class="text-xl">Jambubble</p>
+        <p class="text-5xl ad-content__underline">OfficialSite</p>
+        <p>このプロジェクトのオフィシャルサイトを作ってみました。<br/>よければご覧ください。</p>
+        <p class="ad-content__enter">Enter</p>
+    </a>
+    <div class="table-list">
+        <SectionTitle color="black" title="0.目次" subTitle="Table of contents"/>
+        <div class="table-list__inner">
+            {snapList.map((snap,index)=>(
+                <SnapButton color="black" {...snap} title={`${index+1}.${snap.title}`} />
+            ))}
+        </div>
+    </div>
+
+</section>
+
+<style lang="scss">
+    .t-section{
+        width:100%;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20rem;
+        
+        > *{
+            margin:10rem 0;
+        }
+        
+    }
+    .ad-content{
+        color:white;
+        width:62.5rem;
+        height: 32.25rem;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        > * + *{
+            margin-top:1rem;
+        }
+
+        &__underline{
+            border-bottom: 2px solid white;
+        }
+        &__enter{
+            border-bottom: 1px solid white;
+        }
+    }
+
+    .table-list{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &__inner{
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            max-width: 90rem;
+            gap: 3rem;
+            box-sizing: border-box;
+            padding:0 0.5rem;
+        }
+    }
+
+
+    @media(max-width:767px) {
+        .table-list{
+                    &__inner{
+                        flex-direction: column;
+            flex-wrap: nowrap;
+                    }
+        }
+    }
+</style>

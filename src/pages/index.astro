@@ -13,3 +13,13 @@ import { Hero,Concept,AboutMe,WhatIDo,Product,Message } from "../sections/index"
     <Message/>
 
 </BaseLayout>
+
+
+<script>
+    import { initScrollAllFade } from "../hooks/fadeOnScroll";
+
+    initScrollAllFade({
+        selector:".lamplight",
+        threshold:0.1
+    })
+</script>

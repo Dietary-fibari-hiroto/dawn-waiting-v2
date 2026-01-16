@@ -1,0 +1,49 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex"
+import { SectionTitle } from "../../../components"
+---
+
+<section class="intro">
+    <SectionTitle color="black" title="1.導入" subTitle="Introduction" />
+    <div class="intro-inner">
+        <div>
+            <p class="text-5xl"></p>
+            <p class="concept-text">
+                複数人でドライブに出かけるとき、<br/>
+ 自然と、誰かが音楽を流し始めます。<br/>
+運転席の人が選んだ曲。<br/>
+<br/>
+ 助手席や後部座席は、それをただ聴く側になります。<br/>
+その音楽が好きなら、空気は自然と盛り上がる。<br/>
+ でも、もし好みじゃなかったら——<br/>
+<br/>
+ 誰も悪くないのに、少しだけ退屈な時間が流れます。<br/>
+「次、何か流す？」<br/>
+ そう言われても、結局選ぶのは一人だけ。<br/>
+<br/>
+同じ空間にいて、同じ時間を共有しているのに、<br/>
+ 音楽の体験は、どこか一方通行になっている。<br/>
+            </p>
+        </div>
+        <img class="img--lg-vertical" src={ImagesIndex.pexels}/>
+    </div>
+</section>
+
+<style lang="scss">
+    .intro{
+        &-inner{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap:5rem;
+        }
+    }
+
+    @media (max-width:767px) {
+        .intro{
+            &-inner{
+                flex-direction: column;
+            }
+        }
+    }
+</style>

@@ -1,0 +1,96 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+---
+
+
+<section class="stack-section" id="content-6">
+    <div class="stack-section__content">
+        <div class="stack-section__content-label">
+            <img class="label-icon" src={ImagesIndex.Blazor}/>
+            <div class="label-content">
+                <p><span class="text-5xl">7.</span><span class="text-base">Blazor Server</span></p>
+                <p class="text-3xl">SSRのSPA<br/>サーバーリソースを見せずに使用</p>
+            </div>
+        </div>
+        <p class="stack-section__content-text concept-text">
+JamBubbleでは、ゲスト参加者向けのWebインターフェースにBlazor Serverを採用しています。
+音楽セッションでは、ホスト（Android端末）とゲスト（ブラウザ）が同じプレイリストをリアルタイムで共有し、誰かが曲を追加したり再生操作を行うと、即座に全員の画面に反映される必要があります。この「みんなで同じ画面を見ている」体験を実現するために、Blazor ServerとSignalRの組み合わせが最適でした。
+
+通常のWebアプリでは、JavaScriptを使ってクライアント側で動作するSPA（Single Page Application）を作るか、サーバー側でHTMLをレンダリングする従来型の構成を選ぶことになります。しかしJamBubbleには、もう一つ重要な要件がありました。Spotify APIのキーをクライアントに露出させないことです。
+
+Blazor Serverはサーバー側でC#コードが実行され、SignalRを通じて画面の更新だけをブラウザに送信します。つまり、APIキーなどの機密情報はすべてサーバー内に留まり、バックエンドとフロントエンドの境界を意識することなく安全に外部APIを呼び出せるのです。
+        </p>
+    </div>
+    <figure class="stack-section__figure">
+        <img class="img--sm-horizontal rt" src={ImagesIndex.code}/>
+        <img class="img--sm-horizontal lb" src={ImagesIndex.IMG_7383}/>
+    </figure>
+</section>
+
+<style lang="scss">
+    .stack-section{
+        width:100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        gap:10rem;
+        padding: 3rem 0;
+
+        &__content{
+            display: flex;
+            flex-direction: column;
+            gap:3rem;
+            &-label{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap:1rem;
+            }
+            &-text{
+                width:28rem;
+            }
+        }
+        &__figure{
+            position:relative;
+            width:32rem;
+            height:25rem;
+            > .rt{
+                position:absolute;
+                top:0;
+                right: 0;
+                z-index:1;
+            }
+            > .lb{
+                position:absolute;
+                bottom:0;
+                left: 0;
+                z-index:3;
+            }
+        }
+    }
+    .label{
+        &-icon{
+            width:9rem;
+            height: 9rem;
+            border-radius: 100%;
+            border: solid 10px #333;
+        }
+        &-content{
+            
+        }
+    }
+
+    @media(max-width:767px) {
+        .stack-section{
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 3rem;
+
+            &__content{
+                &-text{
+                    width: 100%;
+                }
+            }
+        }
+    }
+</style>

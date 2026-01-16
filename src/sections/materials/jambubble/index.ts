@@ -1,0 +1,11 @@
+export { default as Hero } from "./Hero.astro";
+export { default as TableOfContent } from "./TableOfContent.astro";
+export { default as Introduction } from "./Introduction.astro";
+export { default as ProblemDefinition } from "./ProblemDefinition.astro";
+export { default as Concept } from "./Concept.astro";
+export { default as Function } from "./Function.astro";
+export { default as Demo } from "./Demo.astro";
+export { default as Technology } from "./Technology.astro";
+export { default as Blazor } from "./Blazor.astro";
+export { default as Challenges } from "./Challenges.astro";
+export { default as NextStep } from "./NextStep.astro";

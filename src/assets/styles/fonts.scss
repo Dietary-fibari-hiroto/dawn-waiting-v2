@@ -61,15 +61,26 @@
 .text-5xl {
   font-size: 3rem;
 } /* 48px */
+.text-5xl-bold {
+  font-size: 3rem;
+  font-weight: bold;
+} /* 48px */
 .text-6xl {
   font-size: 4rem; //64px
 }
 .text-7xl {
   font-size: 5rem; /* 80px */
 }
+.text-7xl-bold {
+  font-size: 5rem; /* 80px */
+  font-weight: bold;
+}
 
 .font-light {
   font-weight: light;
+}
+.line-concept {
+  line-height: 200%;
 }
 
 .concept-text-width {

@@ -1,0 +1,68 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+import { SectionTitle } from "../../../components";
+const bg = ImagesIndex.IMG_7450
+---
+
+<section class="section-frame concept-section" id="content-2" style={`background-image:linear-gradient(#00000088,#00000088),url(${bg})`}>
+    <div class="concept-section__title"><SectionTitle title="3.コンセプトとアプローチ" subTitle="Concept&Approach"/></div>
+    <div class="concept-section__inner">
+        <p class="concept-section__inner-concept text-3xl">変わらぬ日々に、<br/>魔法をかけて。</p>
+        <p class="concept-text concept-section__inner-content">
+私たちは、<br/>
+ 音楽体験の中心を「再生」ではなく、<br/>
+「選ぶ・重ねる・共有する」プロセスに置きました。<br/>
+一つのプレイリストを、複数人で動的に作り、<br/>
+ それぞれが音楽をリクエストできる仕組み。<br/>
+アプリでも、Webでも、<br/>
+ 同じセッションに参加するだけで、<br/>
+ 誰でも音楽体験に加われる。<br/>
+このような仕組みを考えました。<br/>
+        </p>
+    </div>
+</section>
+
+
+<style lang="scss">
+    .concept-section{
+        background-position: center;
+        background-size: cover;
+        color: white;
+        position:relative;
+                    display: flex;
+            justify-content: center;
+
+        &__title{
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        &__inner{
+            display: flex;
+            justify-content: center;
+            gap:10rem;
+            align-items: center;
+            &-concept{
+                writing-mode: vertical-lr;
+                letter-spacing: 1rem;
+                line-height: 3rem;
+            }
+            &-content{
+                max-width: 45rem;
+            }
+        }
+    }
+    @media(max-width:767px){
+        .concept-section{
+            &__inner{
+                flex-direction: column;
+                &-content{
+                    box-sizing: border-box;
+                    width: 100%;
+                    padding:0 1rem;
+                }
+            }
+        }
+
+    }
+</style>

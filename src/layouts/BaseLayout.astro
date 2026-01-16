@@ -3,7 +3,7 @@ import "../assets/styles/index.scss";
 import Footer from "./Footer.astro";
 import Header from "./Header.astro";
 import LoadingScreen from "../sections/LoadingScreen.astro";
-const {title = "dawn"} = Astro.props;
+const {title = "dawn",bg,color} = Astro.props;
 ---
 
 
@@ -15,7 +15,13 @@ const {title = "dawn"} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-    <body class="bg">
+    <body
+  style={`background:${bg
+    ? `${bg}`
+    : "linear-gradient(to bottom, #0a0e27 0%, #1a1e3e 100%)"
+  };
+  color:${color? `${color}`: "" }`}
+>
         <LoadingScreen/>
         <Header/>
         <main>
@@ -41,8 +47,4 @@ const {title = "dawn"} = Astro.props;
 </html>
 
 <style lang="scss">
-    .bg{
-    background: linear-gradient(to bottom, #0a0e27 0%, #1a1e3e 100%);
-
-    }
 </style>

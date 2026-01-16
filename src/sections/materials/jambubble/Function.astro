@@ -1,0 +1,91 @@
+---
+import { title } from "framer-motion/client";
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+import { SectionTitle } from "../../../components";
+
+const functionList = [
+    {
+        title:"機能① セッションを作成する",
+        subTitle:"音楽体験のはじまり",
+        text:"アプリからセッションを作成すると、専用のプレイリストが生成されると同時に、参加用のWebリンクやQRコードが発行され、そのセッションを共有できる状態になります。",
+        isReverse:false,
+        img:ImagesIndex.IMG_7970
+    },
+        {
+        title:"機能② 音楽をリクエストする",
+        subTitle:"誰でも、すぐに参加できる",
+        text:"参加者はリンクやQRコードからアクセスし、Web上で曲を選んでリクエストできます。アプリをインストールする必要はなく、スマートフォン一つで選曲に加われます。",
+        isReverse:true,
+        img:ImagesIndex.IMG_7978
+    },
+        {
+        title:"機能③ 音楽を再生・共有する",
+        subTitle:"体験として、音楽がつながる",
+        text:"リクエストされた音楽は、セッションに参加している再生端末で再生されます。再生する端末が一つでも、複数の端末でも、同じプレイリストを共有した音楽体験が成立します。",
+        isReverse:false,
+        img:ImagesIndex.IMG_7979
+    },
+]
+---
+
+<section class="function padding-section">
+    <SectionTitle isWhite title="5.主な機能とできること" subTitle="Function" color="black" />
+
+
+    {functionList.map((list)=>(
+        <div class={`function-content ${list.isReverse && "reverse"} `}>
+            <div >
+                <div class="function-content__label" >
+                    <p class="text-3xl">{list.title}</p>
+                    <p class="function-content__label-sub">{list.subTitle}</p>
+                </div>
+                <p class="text-md function-content__text">{list.text}</p>
+            </div>
+            <img class="img--md-vertical" src={list.img}/>
+        </div>
+    ))}
+
+</section>
+
+<style lang="scss">
+    .function{
+        &-content{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            &.reverse{
+                flex-direction: row-reverse;
+            }
+            &__label{
+                margin-bottom: 1rem;
+                &-sub{
+                    color: #FF8500;
+                }
+            }
+
+            &__text{
+                width:38.75rem;
+            }
+
+        }
+    }
+
+    @media (max-width:767px) {
+        .function{
+                            > * + *{
+                    margin-top:5rem;
+                }
+            &-content{
+                flex-direction: column;
+                > * + *{
+                    margin-top:3rem;
+                }
+                &.reverse{
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+</style>

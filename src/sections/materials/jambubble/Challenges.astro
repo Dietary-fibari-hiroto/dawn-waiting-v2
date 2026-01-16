@@ -1,0 +1,59 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+import { SectionTitle } from "../../../components";
+---
+
+<section>
+    <SectionTitle title="8.開発で苦労したこと" subTitle="Development Challenges" color="black"/>
+    <div class="challenge">
+        <div class="challenge-l">
+            <p class="text-3xl">マルチプラットフォーム向きから<br/>
+Androidネイティブへ。</p>
+<p class="concept-text-width">
+    当初は .NET MAUI Blazor Hybrid を使って、
+ Web技術ベースでモバイルアプリを開発していました。
+UIの開発スピードは速かったのですが、
+ Spotify SDK を使う段階で問題が発生しました。
+ OSごとのネイティブ SDK を組み込むための
+ Gradle などの設定を、柔軟に行えなかったためです。
+そこで、Android ネイティブでの開発に切り替える判断をしました。
+</p>
+        </div>
+        <div class="challenge-r">
+            <img class="img--lg-vertical" src={ImagesIndex.IMG_8065}/>
+            <p class="concept-text">
+                Android では UI に Jetpack Compose を採用しました。<br/>
+ 関数をネストして UI を構築するスタイルには最初苦労しましたが、<br/>
+ UI と状態を一体で管理できる点は、このアプリに適していました。<br/>
+            </p>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .challenge{
+        display:flex;
+        justify-content: space-evenly;
+        align-items: start;
+        padding: 10rem 0;
+        &-l{
+            > * + *{
+                margin-top:1rem;
+            }
+        }
+        &-r{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            > * + *{
+                margin-top:1rem;
+            }
+        }
+    }
+
+    @media (max-width:767px) {
+        .challenge{
+            flex-direction: column;
+        }
+    }
+</style>

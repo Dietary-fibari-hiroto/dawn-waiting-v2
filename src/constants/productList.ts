@@ -7,6 +7,22 @@ const productGenre = {
 
 export const productList = [
   {
+    name: "Jambubble発表資料",
+    path: "/materials/Jambubble",
+    genre: productGenre.webSite,
+    catchcopy: "私たちで作る、私たちだけの音楽体験",
+    text: "卒業制作発表資料",
+    img: "https://jambubble.dawn-waiting.com/_astro/jamlogo.D3bBYERJ.png",
+  },
+  {
+    name: "Jambubble",
+    path: "https://jambubble.dawn-waiting.com",
+    genre: productGenre.webSite,
+    catchcopy: "私たちで作る、私たちだけの音楽体験",
+    text: "一つのプレイリストを、複数人で動的に作り、それぞれが音楽をリクエストできるモバイルアプリ。",
+    img: "https://jambubble.dawn-waiting.com/_astro/jamlogo.D3bBYERJ.png",
+  },
+  {
     name: "Rumos発表資料",
     path: "/materials/Rumos",
     genre: productGenre.material,

@@ -1,0 +1,55 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+import { SectionTitle } from "../../../components";
+---
+
+<section>
+    <SectionTitle color="black" title="9.成果と学び・今後"/>
+    <div class="nextstep-inner">
+        <p class="concept-text-width">
+            理想の技術構成だけで進めるのではなく、
+ 制約や実装可能性を踏まえて判断することの重要性を学びました。
+また、
+ 音楽体験という抽象的なテーマを、
+ 具体的な機能や仕組みに落とし込む難しさと面白さを実感しました。
+        </p>
+        <img class="img--md-vertical" src={ImagesIndex.IMG_7992} />
+    </div>
+    <div class="nextstep-inner sp-reverse">
+        <img class="img--md-vertical" src={ImagesIndex.IMG_8037}/>
+        <p class="concept-text-width">
+今後は、
+ より多くの人が自然に参加できるよう、
+ 体験の流れや UI の改善を進めていきたいと考えています。
+また、
+ 利用シーンを広げるための機能追加や、
+ 安定したセッション管理にも取り組んでいく予定です。
+音楽を「聴くもの」から
+ 「一緒につくる体験」へ。
+このコンセプトを、
+ より多くの場面で実現していきたいと考えています。
+        </p>
+    </div>
+</section>
+
+<style lang="scss">
+    .nextstep{
+        &-inner{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+
+    @media (max-width:767px) {
+        .nextstep{
+            &-inner{
+                flex-direction: column;
+                &.sp-reverse{
+                    flex-direction: column-reverse;
+                }
+            }
+        }
+        
+    }
+</style>

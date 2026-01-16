@@ -1,5 +1,5 @@
 ---
-const {title,subTitle} = Astro.props;
+const {title,subTitle,color="white"} = Astro.props;
 ---
 
 <div class="section-title">
@@ -11,8 +11,9 @@ const {title,subTitle} = Astro.props;
     </span>
 </div>
 
-<style lang="scss">
+<style define:vars={{color}} lang="scss">
     .section-title{
+        color:var(--color);
         display: flex;
         width:100%;
         box-sizing: border-box;
@@ -21,7 +22,7 @@ const {title,subTitle} = Astro.props;
         padding: 3rem;
         
         &__subtitle{
-            border-bottom: solid white 1px;
+            border-bottom: solid var(--color) 1px;
         }
     }
 </style>

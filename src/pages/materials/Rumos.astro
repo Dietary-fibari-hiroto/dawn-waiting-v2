@@ -11,9 +11,10 @@ const bg = ImagesIndex.IMG_7391;
         <div window-scroll-fade class="fixed-bg__panel section-frame"/>
     </figure>
     
-    <div hero-fadeout>
+    <div class="hero-container section-frame" hero-fadeout>
         <Hero />
     </div>
+    <div class="section-frame"/>
     <TableOfContent/>
     <WhyBuilt/>
     <Concept/>
@@ -57,6 +58,11 @@ const bg = ImagesIndex.IMG_7391;
             background-color: #00000066;
             backdrop-filter: blur(0.5rem);
         }
+    }
+    .hero-container{
+        position:fixed;
+        top:0;
+        left:0;
     }
 
 

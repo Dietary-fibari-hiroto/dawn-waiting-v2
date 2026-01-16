@@ -1,0 +1,34 @@
+---
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+import { SectionTitle } from "../../../components";
+---
+<section id="content-5" class="technology-section">
+    <SectionTitle title="6.技術選定" subTitle="Technology" />
+    <figure style={`background-image:url(${ImagesIndex.jambubble_stack_list})`} class=" technology-section__content"/>
+    <figure style={`background-image:url(${ImagesIndex.jambubble_stack})`} class=" technology-section__content"/>
+</section>
+
+<style lang="scss">
+    .technology-section{
+        background-color: black;
+
+        &__content{
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width:100%;
+            height:100dvh;
+        }
+    }
+
+    @media (max-width:767px) {
+        .technology-section{
+        background-color: black;
+
+        &__content{
+            width:100%;
+        }
+    }
+}
+    
+</style>

@@ -1,6 +1,12 @@
 .section-frame {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
+  max-height: 1080px;
+}
+
+.section-frame__d {
+  width: 100%;
+  min-height: 100dvh;
   max-height: 1080px;
 }
 
