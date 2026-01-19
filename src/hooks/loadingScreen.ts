@@ -2,6 +2,7 @@ export interface LoadingScreenOptions {
   loadingScreenId?: string; // ローディング画面のHTML要素ID
   mainContentId?: string; // メインコンテンツのHTML要素ID
   minDisplayTime?: number; // ローディング画面の最小表示時間（ミリ秒）
+  maxDisplayTime?: number; // ローディング画面の最大表示時間（ミリ秒）
   fadeOutDuration?: number; // フェードアウトにかかる時間（ミリ秒）
   onComplete?: () => void; // ローディング完了時のコールバック関数
 
@@ -26,7 +27,7 @@ export interface LoadingScreenOptions {
  */
 
 export const initLoadingScreenWithStages = (
-  options: LoadingScreenOptions = {}
+  options: LoadingScreenOptions = {},
 ) => {
   const {
     loadingScreenId = "loading-screen",
@@ -36,6 +37,7 @@ export const initLoadingScreenWithStages = (
     loaderSelector = ".loader",
     secondProcessSelector = ".second-proccess",
     minDisplayTime = 500,
+    maxDisplayTime = 8000, // 最大10秒
     loaderFadeDuration = 500,
     secondProcessFadeDuration = 800,
     secondProcessDisplayTime = 2000,
@@ -65,7 +67,7 @@ export const initLoadingScreenWithStages = (
   const progressText = document.getElementById(progressTextId) as HTMLElement;
   const loader = document.querySelector(loaderSelector) as HTMLElement;
   const secondProcess = document.querySelector(
-    secondProcessSelector
+    secondProcessSelector,
   ) as HTMLElement;
 
   //2段階目を最初は非表示に
@@ -76,6 +78,7 @@ export const initLoadingScreenWithStages = (
 
   let totalResources = 0;
   let loadedResources = 0;
+  let hasTransitioned = false; // 二重実行を防ぐフラグ
   const startTime = performance.now();
 
   const updateProgress = () => {
@@ -95,6 +98,11 @@ export const initLoadingScreenWithStages = (
   };
 
   const startStageTransition = () => {
+    if (hasTransitioned) return; // 既に実行済みなら何もしない
+    hasTransitioned = true;
+
+    clearTimeout(timeoutId); // タイムアウトタイマーをクリア
+
     const elapsedTime = performance.now() - startTime;
     const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
 
@@ -147,6 +155,16 @@ export const initLoadingScreenWithStages = (
       }, loaderFadeDuration);
     }, remainingTime);
   };
+
+  // タイムアウトタイマーを設定
+  const timeoutId = setTimeout(() => {
+    console.warn(
+      "Loading timeout - forcing transition after",
+      maxDisplayTime,
+      "ms",
+    );
+    startStageTransition();
+  }, maxDisplayTime);
 
   //画像の読み込みを追跡
   if (trackImages) {

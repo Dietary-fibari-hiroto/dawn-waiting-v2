@@ -38,6 +38,8 @@ import IMG_7979 from "./images/photos/IMG_7979.jpg";
 import IMG_7992 from "./images/photos/IMG_7992.jpg";
 import IMG_8037 from "./images/photos/IMG_8037.jpg";
 import IMG_8065 from "./images/photos/IMG_8065.jpg";
+import IMG_8071 from "./images/photos/IMG_8071.jpg";
+import IMG_8077 from "./images/photos/IMG_8077.jpg";
 
 import code from "./images/photos/code.png";
 import hero from "./images/photos/hero.png";
@@ -67,6 +69,7 @@ export const ImagesIndex = {
 
   // Photos - IMG series
   IMG_1782: IMG_1782.src,
+  IMG_8071: IMG_8071.src,
   IMG_7112: IMG_7112.src,
   IMG_7122: IMG_7122.src,
   IMG_7159: IMG_7159.src,
@@ -93,6 +96,7 @@ export const ImagesIndex = {
   IMG_7992: IMG_7992.src,
   IMG_8037: IMG_8037.src,
   IMG_8065: IMG_8065.src,
+  IMG_8077: IMG_8077.src,
 
   // Photos - Other
   code: code.src,
