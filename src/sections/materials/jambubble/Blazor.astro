@@ -13,10 +13,10 @@ import { ImagesIndex } from "../../../assets/ImagesIndex";
             </div>
         </div>
         <p class="stack-section__content-text concept-text">
-JamBubbleでは、ゲスト参加者向けのWebインターフェースにBlazor Serverを採用しています。
+OurVibeでは、ゲスト参加者向けのWebインターフェースにBlazor Serverを採用しています。
 音楽セッションでは、ホスト（Android端末）とゲスト（ブラウザ）が同じプレイリストをリアルタイムで共有し、誰かが曲を追加したり再生操作を行うと、即座に全員の画面に反映される必要があります。この「みんなで同じ画面を見ている」体験を実現するために、Blazor ServerとSignalRの組み合わせが最適でした。
 
-通常のWebアプリでは、JavaScriptを使ってクライアント側で動作するSPA（Single Page Application）を作るか、サーバー側でHTMLをレンダリングする従来型の構成を選ぶことになります。しかしJamBubbleには、もう一つ重要な要件がありました。Spotify APIのキーをクライアントに露出させないことです。
+通常のWebアプリでは、JavaScriptを使ってクライアント側で動作するSPA（Single Page Application）を作るか、サーバー側でHTMLをレンダリングする従来型の構成を選ぶことになります。しかしOurVibeには、もう一つ重要な要件がありました。Spotify APIのキーをクライアントに露出させないことです。
 
 Blazor Serverはサーバー側でC#コードが実行され、SignalRを通じて画面の更新だけをブラウザに送信します。つまり、APIキーなどの機密情報はすべてサーバー内に留まり、バックエンドとフロントエンドの境界を意識することなく安全に外部APIを呼び出せるのです。
         </p>

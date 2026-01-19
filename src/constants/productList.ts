@@ -7,7 +7,7 @@ const productGenre = {
 
 export const productList = [
   {
-    name: "Jambubble発表資料",
+    name: "OurVibe発表資料",
     path: "/materials/Jambubble",
     genre: productGenre.webSite,
     catchcopy: "私たちで作る、私たちだけの音楽体験",
@@ -15,7 +15,7 @@ export const productList = [
     img: "https://jambubble.dawn-waiting.com/_astro/jamlogo.D3bBYERJ.png",
   },
   {
-    name: "Jambubble",
+    name: "OurVibe",
     path: "https://jambubble.dawn-waiting.com",
     genre: productGenre.webSite,
     catchcopy: "私たちで作る、私たちだけの音楽体験",
