@@ -1,0 +1,248 @@
+---
+const expertSkills = [
+  { 
+    name: 'JavaScript', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    description: 'Web開発やAPIサーバーを作成するのに使用。Node.jsやReactが得意'
+  },
+  { 
+    name: 'HTML', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+    description: 'Web作成に使用。タグの役割を理解しており、ベストの少ないコーディングが可能。得意'
+  },
+  { 
+    name: 'CSS', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+    description: 'ほぼすべてのCSSプロパティを記憶、理解しており、想像した通りに要素を操作することが可能。得意'
+  },
+  { 
+    name: 'SCSS', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg',
+    description: 'CSSプリプロセッサ。ネストや変数を活用した効率的なスタイリング'
+  },
+  { 
+    name: 'Tailwind', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+    description: 'ユーティリティファーストCSSフレームワーク。高速なUI構築に使用'
+  },
+  { 
+    name: 'React', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    description: 'UIライブラリ。コンポーネントベースの開発が得意'
+  },
+  { 
+    name: 'Astro', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg',
+    description: '高速な静的サイト生成フレームワーク。パフォーマンス重視の開発に使用'
+  },
+  { 
+    name: 'C#', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
+    description: 'WindowsソフトやAPIサーバーを作成するのに使用。ASP.NET Core、WinUIが得意'
+  },
+  { 
+    name: 'WinUI', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg',
+    description: 'Windowsネイティブアプリ開発用UIフレームワーク'
+  },
+  { 
+    name: 'WPF', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg',
+    description: 'Windowsデスクトップアプリケーション開発フレームワーク'
+  },
+  { 
+    name: 'Blazor Server', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blazor/blazor-original.svg',
+    description: 'C#でWebアプリを構築。リアルタイム通信が得意'
+  },
+  { 
+    name: '.NET MAUI Blazor Hybrid', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg',
+    description: 'クロスプラットフォームアプリ開発。モバイル・デスクトップ対応'
+  },
+  { 
+    name: 'ASP.NET', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg',
+    description: 'Webアプリケーション・API開発フレームワーク'
+  },
+  { 
+    name: 'MySQL', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+    description: 'DBを作成、管理するのに使用。小規模なプロジェクトであれば、拡張性や保守性を意識し、第三正規化まで可能。'
+  },
+  { 
+    name: 'SQL Server', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg',
+    description: 'Windowsアプリケーションでのデータベース管理に使用。'
+  },
+  { 
+    name: 'Azure', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+    description: 'クラウドプラットフォーム。Container Apps、SQL Database等を使用'
+  },
+];
+---
+
+<section class="expert-skills">
+  <div class="container">
+    <p class="text-5xl">得意・よく使う言語/技術</p>
+    
+    <div class="skills-wrapper">
+      <div class="skills-grid">
+        {expertSkills.map((skill, index) => (
+          <div class="skill-card" data-index={index}>
+            <div class="skill-icon">
+              <img src={skill.logo} alt={skill.name} loading="lazy" />
+            </div>
+            <p class="skill-name">{skill.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .expert-skills {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1400px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 4rem;
+    letter-spacing: 0.05em;
+    
+    background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .skills-wrapper {
+    margin-bottom: 3rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  .skill-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-8px);
+
+      &::before {
+        opacity: 1;
+      }
+
+      .skill-icon img {
+        transform: scale(1.1) rotate(5deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 1.5rem 0.5rem;
+    }
+  }
+
+  .skill-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.1));
+    }
+
+    @media (max-width: 768px) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  .skill-name {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>

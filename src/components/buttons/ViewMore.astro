@@ -1,0 +1,19 @@
+---
+const {path,color = "white",label = "ViewMore..."} = Astro.props;
+---
+
+<a class="viewmore-button" href={path}>
+    {label}
+</a>
+
+<style define:vars={{color}} lang="scss">
+    .viewmore-button{
+        border-bottom: 1px solid var(--color);
+        padding-right: 3rem;
+        margin:1rem 0;
+        transition: all 0.5s ease-in-out;
+        &:hover{
+            padding-right: 15rem;
+        }
+    }
+</style>

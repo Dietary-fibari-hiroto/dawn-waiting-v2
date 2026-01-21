@@ -1,0 +1,74 @@
+---
+import { ImagesIndex } from "../../assets/ImagesIndex";
+---
+
+<section class="idea">
+    <div class="idea-inner">
+        <img class="img--md-horizontal" src={ImagesIndex.IMG_7411} alt = ""/>
+        <div class="idea-inner__content">
+            <p class="text-5xl">「シンプルだけど、華やか。」<br/>
+そんなUIを目指して。</p>
+            <p class="concept-text-width">
+                アプリやWebを作るときにまず最初にとりかかるのはUIデザインです。私は個人制作では「華やかさ」「ちょっとした遊び心」を意識しながらデザインをしています。 私自身リッチなアニメーションが実装されているUIが好きで"動き"を通じて心が動くようなUI設計を目指しています。 シンプルで操作しやすいのにどこか彩りがあって華やか。そんなUIを作れるようになりたいと考えています。
+            </p>
+        </div>
+    </div>
+    <div class="idea-inner revers">
+        <div class="idea-inner__content">
+            <p class="text-5xl">
+                「既存かどうか」よりも<br/>
+「学びになるか。作りたいものか。」
+            </p>
+            <p class="concept-text-width">
+                私が学生時代、モノづくりをする上で念頭に置いていたことは、既存かどうかにこだわらない、ということです。周りの人たちはモノづくりをするとき既存かどうかをとても気にしていました。たしかに重要な視点です。しかし、その結果作り始めることができず、自分の可能性の幅を狭めていると感じました。なので私は、既存のものでもUIや仕組みを自分で一から構築することに価値があるのでは？と考え、調べる前にまず作ってみることにしました。そうして手を動かし続けた結果、コーディングの知識だけでなく、「ここをこう変えたらもっと良くなる」という改善の視点が育ち、既存にないプロダクトの提案もできるようになっていました。
+            </p>
+        </div>
+        <img class="img--md-horizontal" src={ImagesIndex.IMG_8088} alt = ""/>
+
+    </div>
+
+        <div class="idea-inner">
+        <img class="img--md-horizontal" src={ImagesIndex.IMG_7112} alt = ""/>
+        <div class="idea-inner__content">
+            <p class="concept-text-width">
+                なので私は、既存のものでもUIや仕組みを自分で一から構築することに価値があるのでは？と考え、調べる前にまず作ってみることにしました。例えば、ワインボトルを使ったインテリアライトを作り始めたとき、「遠隔で色を自在に変えられたら面白いな」と思いつき、さらには「スイッチボットやTP-Linkのような制御システムも自分で作れるんじゃないか」と発展していきました。そうして手を動かし続けた結果、コーディングの知識だけでなく、既存にない自分仕様のIoTシステムを提案できる力も身についていました。
+            </p>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .idea{
+        padding:10rem 0;
+        width:100%;
+        > * + *{
+            margin-top:10rem;
+        }
+
+        &-inner{
+            display: flex;
+            justify-content: space-evenly;
+            gap:3rem;
+            &__content{
+                display: flex;
+                flex-direction: column;
+                gap:1rem;
+            }
+        }
+    }
+
+    @media (max-width:767px) {
+        .idea{
+            &-inner{
+                flex-direction: column;
+                align-items:center;
+                &__content{
+                    align-items: center;
+                }
+                &.revers{
+                    flex-direction: column-reverse;
+                }
+            }
+        }
+    }
+</style>

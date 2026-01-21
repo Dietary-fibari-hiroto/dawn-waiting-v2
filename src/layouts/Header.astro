@@ -1,16 +1,119 @@
 ---
 import { ImagesIndex } from "../assets/ImagesIndex";
 ---
-
 <header class="header">
     <a href="/">
         <img class="header-logo" src={ImagesIndex.dawn_logo}/>
     </a>
-
-    <button>
+    <button class="menu-button" id="menuButton">
         <img src={ImagesIndex.compass}/>
+        <p>Menu</p>
     </button>
 </header>
+
+<nav class="menu-overlay" id="menuOverlay">
+    <div class="menu-content">
+        <button class="menu-close" id="menuClose">×</button>
+        
+        <div class="menu-links">
+            <a href="/" class="menu-link" data-index="1">Home</a>
+            <a href="/profile" class="menu-link" data-index="2">Profile</a>
+            <a href="https://v1.dawn-waiting.com" class="menu-link" data-index="3" target="_blank" rel="noopener noreferrer">
+                Portfolio v1
+            </a>
+            <a href="https://github.com/Dietary-fibari-hiroto" class="menu-link" data-index="4" target="_blank" rel="noopener noreferrer">
+                GitHub
+            </a>
+            
+            <div class="menu-social">
+                <a href="" target="_blank" rel="noopener noreferrer" class="social-link" data-index="5">
+                    YouTube
+                </a>
+                <a href="" target="_blank" rel="noopener noreferrer" class="social-link" data-index="6">
+                    Twitter
+                </a>
+                <a href="" target="_blank" rel="noopener noreferrer" class="social-link" data-index="7">
+                    Instagram
+                </a>
+            </div>
+        </div>
+        <img src={ImagesIndex.IMG_8093} class="menu-content__img one img--sm-horizontal"/>
+        <img src={ImagesIndex.IMG_7122} class="menu-content__img two img--sm-vertical"/>
+        <img src={ImagesIndex.IMG_7411} class="menu-content__img three img--sm-horizontal"/>
+
+    </div>
+
+</nav>
+
+<script>
+    const menuButton = document.getElementById('menuButton');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const menuClose = document.getElementById('menuClose');
+    const menuLinks = document.querySelectorAll('.menu-link');
+    const socialLinks = document.querySelectorAll('.social-link');
+    const menuImages = document.querySelectorAll('.menu-content__img');
+
+    function openMenu() {
+        menuOverlay?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // リンクのstaggerアニメーション
+        menuLinks.forEach((link, index) => {
+            setTimeout(() => {
+                link.classList.add('visible');
+            }, 150 + (index * 80));
+        });
+        
+        // ソーシャルリンクのアニメーション
+        socialLinks.forEach((link, index) => {
+            setTimeout(() => {
+                link.classList.add('visible');
+            }, 500 + (index * 60));
+        });
+        
+        // 画像のアニメーション
+        menuImages.forEach((img, index) => {
+            setTimeout(() => {
+                img.classList.add('visible');
+            }, 300 + (index * 150));
+        });
+    }
+
+    function closeMenu() {
+        // 閉じるときは逆順でフェードアウト
+        const allItems = [...menuLinks, ...socialLinks, ...menuImages];
+        
+        allItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.remove('visible');
+                item.classList.add('hiding');
+            }, index * 30);
+        });
+        
+        setTimeout(() => {
+            menuOverlay?.classList.remove('active');
+            document.body.style.overflow = '';
+            allItems.forEach(item => item.classList.remove('hiding'));
+        }, allItems.length * 30 + 200);
+    }
+
+    menuButton?.addEventListener('click', openMenu);
+    menuClose?.addEventListener('click', closeMenu);
+
+    // オーバーレイ背景クリックでも閉じる
+    menuOverlay?.addEventListener('click', (e) => {
+        if (e.target === menuOverlay) {
+            closeMenu();
+        }
+    });
+
+    // ESCキーで閉じる
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuOverlay?.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+</script>
 
 <style lang="scss">
     .header{
@@ -27,6 +130,324 @@ import { ImagesIndex } from "../assets/ImagesIndex";
         align-items: center;
         &-logo{
             height:5rem;
+        }
+    }
+
+    .menu-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        img {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100dvh;
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+        z-index: 10;
+        opacity: 0;
+        pointer-events: none;
+        transition: 
+            opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            background 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            backdrop-filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+        &.active {
+            opacity: 1;
+            pointer-events: all;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        //開くときの光のエフェクト
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(
+                circle,
+                rgba(255, 165, 0, 0.15) 0%,
+                transparent 70%
+            );
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                        height 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            pointer-events: none;
+        }
+
+        &.active::before {
+            width: 150vmax;
+            height: 150vmax;
+        }
+    }
+
+    .menu-content {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__img{
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            filter: blur(10px) saturate(0);
+            transition: 
+                opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+            &.one{
+                top: 10%;
+                left: 0;
+                transform: translateX(-100%) rotate(-15deg);
+            }
+            &.two{
+                top: 30%;
+                right: 10%;
+                transform: translateY(-50px) rotate(10deg) scale(0.8);
+            }
+            &.three{
+                bottom: 0;
+                left: 20%;
+                transform: translateY(100%) rotate(5deg);
+            }
+
+            &.visible {
+                opacity: 1;
+                filter: blur(0) saturate(1);
+                
+                &.one {
+                    transform: translateX(0) rotate(-3deg);
+                }
+                &.two {
+                    transform: translateY(0) rotate(3deg) scale(1);
+                }
+                &.three {
+                    transform: translateY(0) rotate(-2deg);
+                }
+            }
+
+            &.hiding {
+                opacity: 0;
+                filter: blur(5px);
+                transition: all 0.3s ease-out;
+            }
+        }
+    }
+
+    .menu-close {
+        position: absolute;
+        z-index: 5;
+        top: 2rem;
+        right: 2rem;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 3rem;
+        cursor: pointer;
+        line-height: 1;
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.5);
+        transition: 
+            transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+            opacity 0.3s ease;
+
+        .menu-overlay.active & {
+            opacity: 1;
+            transform: rotate(0) scale(1);
+            transition-delay: 0.2s;
+        }
+
+        &:hover {
+            transform: rotate(90deg) scale(1.1);
+            color: #ffa500;
+        }
+    }
+
+    .menu-links {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .menu-link {
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        position: relative;
+        transition: 
+            color 0.3s ease,
+            transform 0.3s ease;
+        
+        // 初期状態（非表示）
+        opacity: 0;
+        transform: translateY(40px) rotateX(-15deg);
+        
+        &.visible {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+            transition: 
+                opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                color 0.3s ease;
+        }
+
+        &.hiding {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+            transition: all 0.2s ease-out;
+        }
+
+        //光るアンダーライン
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffa500, white, #ffa500, transparent);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        //グローエフェクト
+        &::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #ffa500;
+            filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        &:hover {
+            color: #ffa500;
+            transform: translateX(10px);
+            text-shadow: 0 0 30px rgba(255, 165, 0, 0.5);
+            
+            &::after {
+                transform: translateX(-50%) scaleX(1);
+            }
+
+            &::before {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .menu-social {
+        margin-top: 3rem;
+        display: flex;
+        gap: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+
+        //ニメーションする境界線
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 165, 0, 0.5), transparent);
+            transform: translateX(-50%);
+            transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+        }
+
+        .menu-overlay.active & {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+
+    .social-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 1rem;
+        transition: 
+            color 0.3s ease, 
+            transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        
+        //初期状態
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+        
+        &.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition: 
+                opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                color 0.3s ease;
+        }
+
+        &.hiding {
+            opacity: 0;
+            transform: translateY(-10px) scale(0.9);
+            transition: all 0.15s ease-out;
+        }
+
+        &:hover {
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .menu-link {
+            font-size: 1.5rem;
+        }
+
+        .menu-social {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .menu-overlay,
+        .menu-link,
+        .social-link,
+        .menu-content__img,
+        .menu-close {
+            transition-duration: 0.01ms !important;
         }
     }
 </style>
