@@ -8,13 +8,13 @@ import { ImagesIndex } from "../../../assets/ImagesIndex";
         <div class="stack-section__content-label">
             <img class="label-icon" src={ImagesIndex.Blazor}/>
             <div class="label-content">
-                <p><span class="text-5xl">7.</span><span class="text-base">Blazor Server</span></p>
+                <p><span class="text-5xl">+.</span><span class="text-base">Blazor Server</span></p>
                 <p class="text-3xl">SSRのSPA<br/>サーバーリソースを見せずに使用</p>
             </div>
         </div>
         <p class="stack-section__content-text concept-text">
 OurVibeでは、ゲスト参加者向けのWebインターフェースにBlazor Serverを採用しています。
-音楽セッションでは、ホスト（Android端末）とゲスト（ブラウザ）が同じプレイリストをリアルタイムで共有し、誰かが曲を追加したり再生操作を行うと、即座に全員の画面に反映される必要があります。この「みんなで同じ画面を見ている」体験を実現するために、Blazor ServerとSignalRの組み合わせが最適でした。
+音楽セッションでは、ホスト（Android端末）とゲスト（ブラウザ）が同じプレイリストをリアルタイムで共有し、誰かが曲を追加したり再生操作を行うと、即座に全員の画面に反映される必要があります。この「みんなで同じ状態の画面を見ている」を実現するために、Blazor ServerとSignalRが最適だと考えました。
 
 通常のWebアプリでは、JavaScriptを使ってクライアント側で動作するSPA（Single Page Application）を作るか、サーバー側でHTMLをレンダリングする従来型の構成を選ぶことになります。しかしOurVibeには、もう一つ重要な要件がありました。Spotify APIのキーをクライアントに露出させないことです。
 
