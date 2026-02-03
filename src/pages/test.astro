@@ -1,0 +1,10 @@
+---
+import PostList from "../sections/prototypes/PostList";
+import CreatePost from "../sections/prototypes/CreatePost";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <PostList client:only="react"/>
+    <CreatePost client:only="react" />
+</BaseLayout>
