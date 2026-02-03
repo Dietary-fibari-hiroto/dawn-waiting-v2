@@ -10,3 +10,4 @@ export { default as Maui } from "./Maui.astro";
 export { default as AstroStack } from "./AstroStack.astro";
 export { default as Outcomes } from "./Outcomes.astro";
 export { default as SpecialThanks } from "./SpecialThanks.astro";
+export { default as Features } from "./Features.astro";

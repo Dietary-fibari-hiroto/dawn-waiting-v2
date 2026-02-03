@@ -1,0 +1,44 @@
+---
+import { Accordion,SectionTitle } from "../../../components";
+import { ImagesIndex } from "../../../assets/ImagesIndex";
+---
+<section>
+        <SectionTitle title="+α.追加サブ資料" subTitle="+α"/>
+
+    <Accordion title="クロスプラットフォーム×Web技術">
+        <h1>なぜクロスプラットフォーム開発で
+Web技術が使えたらうれしいのでしょうか？</h1>
+<br/>
+<p class="text-md">
+クロスプラットフォーム開発にWeb技術が活用されるのは、まずWeb開発者の数が圧倒的に多く、チーム編成や情報収集が容易だからだと思います。iOS、Android、Windows、Mac、Linuxそれぞれにネイティブ開発者を揃えるのは現実的ではありませんが、Web技術ベースならコアのロジックとUIを共有でき、一度書けばほぼどこでも動くため保守コストを大幅に削減できます。また、CSSはアニメーションやレイアウトの表現力が高く、ネイティブUIでカスタムデザインを実装するより柔軟なことも多いものです。さらに、npmパッケージやフレームワークといったエコシステムが成熟しており、開発効率が高い点など、いいこと尽くしです。
+</p>
+    </Accordion>
+    <Accordion title="Electronの仕組み">
+        <h1>ブラウザを内包？！</h1>
+        <br/>
+        <img class="img--md-horizontal" src={ImagesIndex.electron_example}/>
+        <br/>
+        <p class="text-md">
+            ElectronはフロントエンドUIをHTM,CSS,Javascript、バックエンドロジックをNode.jsを用いたJavascript言語でクロスプラットフォームを開発できる技術です。構成が面白くで、ビルドしたアプリ内に「ブラウザ」と「Node.jsランタイム」を内包することで開発のほとんどをWeb技術で可能にし、各OSで差のない挙動で動かすことを可能にした技術です。
+            みんな使ってる「VsCode」,「Notion」もこの技術で作られました。
+        </p>
+    </Accordion>
+    <Accordion title="TauriというRustフレームワーク">
+        <h1>バックエンドをGoで開発できる</h1>
+        <br/>
+        <img class="img--md-horizontal" src={ImagesIndex.tauri_example}/>
+        <br/>
+        <p class="text-md">
+            Rust言語をバックエンドに採用したクロスプラットフォームのデスクトップ・モバイルアプリケーション開発フレームワークです。フロントエンドにはReact、Vue、Svelte、AstroといったモダンなWeb技術を使用でき、既存のWebアプリケーションをそのままネイティブアプリ化することも可能です。Electronと同様にWeb技術でUIを構築しますが、ChromiumをバンドルせずOSネイティブのWebViewを利用するため、生成されるバイナリが非常に軽量でメモリ消費も少なくなります。バックエンドにRustを採用していることで、メモリ安全性と高いパフォーマンスが保証され、セキュリティ面でも優れた設計となっています。また、Tauri v2からはiOSやAndroidといったモバイルプラットフォームにも対応し、デスクトップとモバイルの両方を単一のコードベースから構築できるようになりました。Rustの学習コストはやや高いものの、パフォーマンスやセキュリティを重視する開発者や、軽量なアプリケーションを配布したい場合に非常に有力な選択肢となります。
+        </p>
+    </Accordion>
+    <Accordion title="WailsというGoフレームワーク">
+        <h1>バックエンドをGoで開発できる</h1>
+        <br/>
+        <img class="img--md-horizontal" src={ImagesIndex.wails_example}/>
+        <br/>
+        <p class="text-md">
+Wailsは、Go言語でデスクトップアプリケーションを構築するためのフレームワークです。バックエンドにGoの高速性と堅牢性を活かしながら、フロントエンドにはReact、Vue、Svelteといった馴染みのあるWeb技術を使用できる点が特徴となっています。Electronと似たアプローチを取りますが、ChromiumをバンドルせずOSネイティブのWebViewを利用するため、生成されるバイナリが非常に軽量になります。GoとJavaScript間のバインディングが自動生成され、Goで定義した関数をフロントエンドからシームレスに呼び出せるため、型安全性を保ちながら効率的に開発を進めることができます。また、ホットリロードにも対応しており、開発体験も快適です。TauriがRustをバックエンドに採用しているのに対し、WailsはGoを採用しているため、Goのシンプルな文法や豊富な標準ライブラリ、高速なコンパイルといった恩恵を受けられます。Goに慣れている開発者がデスクトップアプリを作りたい場合や、既存のGoのロジックをデスクトップアプリとして提供したい場合に有力な選択肢となります。
+        </p>
+    </Accordion>
+</section>

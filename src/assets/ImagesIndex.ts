@@ -45,6 +45,10 @@ import IMG_8067 from "./images/photos/IMG_8067.jpg";
 import IMG_8088 from "./images/photos/IMG_8088.jpg";
 import IMG_8093 from "./images/photos/IMG_8093.jpg";
 
+import electron_example from "./images/photos/electron_example.png";
+import wails_example from "./images/photos/wails_example.png";
+import tauri_example from "./images/photos/tauri_example.png";
+
 import code from "./images/photos/code.png";
 import hero from "./images/photos/hero.png";
 import verticalHero from "./images/photos/verticalHero.png";
@@ -59,6 +63,9 @@ export const ImagesIndex = {
   // Elements
   compass: compass.src,
   verticalHero: verticalHero.src,
+  electron_example: electron_example.src,
+  wails_example: wails_example.src,
+  tauri_example: tauri_example.src,
   // Icons
   dawn_logo: dawn_logo.src,
   astro_logo: astro_logo.src,
