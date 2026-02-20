@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import { Hero,Concept,AboutMe,WhatIDo,Product,Message } from "../sections/index";
+import { Hero,Concept,AboutMe,WhatIDo,Product,Message,Contact } from "../sections/index";
 ---
-
 
 <BaseLayout>
     <Hero/>
@@ -11,9 +10,8 @@ import { Hero,Concept,AboutMe,WhatIDo,Product,Message } from "../sections/index"
     <WhatIDo/>
     <Product/>
     <Message/>
-
+    <Contact/>
 </BaseLayout>
-
 
 <script>
     import { initScrollAllFade } from "../hooks/fadeOnScroll";
