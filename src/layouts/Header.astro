@@ -51,21 +51,18 @@ import { ImagesIndex } from "../assets/ImagesIndex";
         menuOverlay?.classList.add('active');
         document.body.style.overflow = 'hidden';
         
-        // リンクのstaggerアニメーション
         menuLinks.forEach((link, index) => {
             setTimeout(() => {
                 link.classList.add('visible');
             }, 150 + (index * 80));
         });
         
-        // ソーシャルリンクのアニメーション
         socialLinks.forEach((link, index) => {
             setTimeout(() => {
                 link.classList.add('visible');
             }, 500 + (index * 60));
         });
         
-        // 画像のアニメーション
         menuImages.forEach((img, index) => {
             setTimeout(() => {
                 img.classList.add('visible');
@@ -74,7 +71,6 @@ import { ImagesIndex } from "../assets/ImagesIndex";
     }
 
     function closeMenu() {
-        // 閉じるときは逆順でフェードアウト
         const allItems = [...menuLinks, ...socialLinks, ...menuImages];
         
         allItems.forEach((item, index) => {
@@ -94,14 +90,13 @@ import { ImagesIndex } from "../assets/ImagesIndex";
     menuButton?.addEventListener('click', openMenu);
     menuClose?.addEventListener('click', closeMenu);
 
-    // オーバーレイ背景クリックでも閉じる
     menuOverlay?.addEventListener('click', (e) => {
         if (e.target === menuOverlay) {
             closeMenu();
         }
     });
 
-    // ESCキーで閉じる
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && menuOverlay?.classList.contains('active')) {
             closeMenu();
@@ -299,7 +294,7 @@ import { ImagesIndex } from "../assets/ImagesIndex";
             color 0.3s ease,
             transform 0.3s ease;
         
-        // 初期状態（非表示）
+        //初期状態（非表示）
         opacity: 0;
         transform: translateY(40px) rotateX(-15deg);
         

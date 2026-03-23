@@ -44,6 +44,7 @@ import IMG_8077 from "./images/photos/IMG_8077.jpg";
 import IMG_8067 from "./images/photos/IMG_8067.jpg";
 import IMG_8088 from "./images/photos/IMG_8088.jpg";
 import IMG_8093 from "./images/photos/IMG_8093.jpg";
+import IMG_9063 from "./images/photos/IMG_9063.jpg";
 
 import electron_example from "./images/photos/electron_example.png";
 import wails_example from "./images/photos/wails_example.png";
@@ -112,6 +113,7 @@ export const ImagesIndex = {
   IMG_8077: IMG_8077.src,
   IMG_8067: IMG_8067.src,
   IMG_8093: IMG_8093.src,
+  IMG_9063:IMG_9063.src,
 
   // Photos - Other
   code: code.src,

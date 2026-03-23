@@ -1,8 +1,9 @@
 ---
 import { ImagesIndex } from "../../assets/ImagesIndex";
-
+//const bg = ImagesIndex.IMG_8077;
+const bg = ImagesIndex.IMG_9063;
 ---
-<section class="section-frame hero-section" style={`background-image:url(${ImagesIndex.IMG_8077})`}>
+<section class="section-frame hero-section" style={`background:linear-gradient(#00000044),url(${bg}); background-position:center; background-size:cover;`}>
     <p class="text-xl hero-section__concept">夜が明けるたび、少しずつ。</p>
     <img src={ImagesIndex.dawn_logo} class="hero-section__logo" />
 </section>
