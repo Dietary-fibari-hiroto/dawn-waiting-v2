@@ -59,6 +59,7 @@ import weblatest from "./images/photos/weblatest.png";
 import jambubble_stack from "./images/photos/jambubble_stack.png";
 import jambubble_stack_list from "./images/photos/jambubble_stack_list.png";
 import pexels from "./images/photos/pexels-thevibrantmachine-3066867.png";
+import ourvibe_logo from "./images/icons/ourvibe_logo.png";
 
 export const ImagesIndex = {
   // Elements
@@ -78,6 +79,7 @@ export const ImagesIndex = {
   html_logo: html_logo.src,
   MAUI: MAUI.src,
   Blazor: Blazor.src,
+  ourvibe_logo:ourvibe_logo.src,
 
   // Photos - IMG series
   IMG_7411: IMG_7411.src,

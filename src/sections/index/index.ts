@@ -5,3 +5,4 @@ export { default as WhatIDo } from "./WhatIDo.astro";
 export { default as Product } from "./Product.astro";
 export { default as Message } from "./Message.astro";
 export { default as Contact } from "./Contact.astro";
+export {default as CurrentProduct} from "./CurrentProduct.astro";

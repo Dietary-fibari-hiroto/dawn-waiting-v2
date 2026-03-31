@@ -1,0 +1,34 @@
+---
+import { ImagesIndex } from "../../assets/ImagesIndex"
+import { ProductCard } from "../../components"
+---
+
+<section class="current-section">
+    <p class="text-5xl">CurrentProduct</p>
+    <a href="https://ourvibe.dawn-waiting.com">
+        <div class="current-section__product">
+            <img class="img--sm-box" src={ImagesIndex.ourvibe_logo}/>
+            <p class="text-3xl">OurVibe α</p>
+            <p>そばにいても、離れていても、同じ音楽を。</p>
+        </div>
+    </a>
+</section>
+
+<style lang="scss">
+    .current-section{
+        padding:3rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        gap: 1rem;
+
+        &__product{
+            text-align: center;
+            transition: opacity 0.3s ease-in-out;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.6;
+            }
+        }
+    }
+</style>
