@@ -1,3 +1,5 @@
+import { ImagesIndex } from "../assets/ImagesIndex";
+
 const productGenre = {
   webSite: "webサイト",
   webApp: "Webアプリ",
@@ -6,6 +8,14 @@ const productGenre = {
 };
 
 export const productList = [
+  {
+    name: "Zanzo",
+    path: "https://zanzo.dawn-waiting.com",
+    genre: productGenre.webSite,
+    catchcopy: "歴史にはのこらない、いつかの残像",
+    text: "お写真ポートフォリオ",
+    img: ImagesIndex.zanzo_logo,
+  },
   {
     name: "OurVibe発表資料",
     path: "/materials/Jambubble",
@@ -47,16 +57,8 @@ export const productList = [
     img: "https://rumos.dawn-waiting.com/_astro/sangria_icon.XcODPnkS.png",
   },
   {
-    name: "日々写真館",
-    path: "https://hibi.dawn-waiting.com/",
-    genre: productGenre.webSite,
-    catchcopy: "気ままに切り取る今日の景色",
-    text: "お写真ポートフォリオ",
-    img: "https://hibi.dawn-waiting.com/_astro/IMG_0168.B7oJDhxL.jpg",
-  },
-  {
     name: "Dawn",
-    path: "https://dawn-waiting.com/",
+    path: "https://v2.dawn-waiting.com/",
     genre: productGenre.webSite,
     catchcopy: "継続を凌駕する実行力",
     text: "一つ目のポートフォリオ",

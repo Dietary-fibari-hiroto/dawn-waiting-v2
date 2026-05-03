@@ -60,6 +60,8 @@ import jambubble_stack from "./images/photos/jambubble_stack.png";
 import jambubble_stack_list from "./images/photos/jambubble_stack_list.png";
 import pexels from "./images/photos/pexels-thevibrantmachine-3066867.png";
 import ourvibe_logo from "./images/icons/ourvibe_logo.png";
+import zanzo_logo from "./images/icons/zanzo_logo.png";
+
 
 export const ImagesIndex = {
   // Elements
@@ -69,6 +71,7 @@ export const ImagesIndex = {
   wails_example: wails_example.src,
   tauri_example: tauri_example.src,
   // Icons
+  zanzo_logo:zanzo_logo.src,
   dawn_logo: dawn_logo.src,
   astro_logo: astro_logo.src,
   azure: azure.src,
